@@ -7,10 +7,12 @@ body {
 .heading {
     text-align: center;
     font-size: 2.5rem;
+    padding-bottom: 10px;
 }
 
 .logo {
-    height: 70px;
+    height: 100px;
+    width: 100px;
     padding-right: 5px;
 }
 
@@ -28,9 +30,48 @@ body {
     padding: 1%;
 }
 
+.game-list-area>h2 {
+    text-align: center;
+}
+
+/* Styles for the controls-area div */
 .controls-area {
-    width: 85%;
-    margin: 30px auto;
+    text-align: center;
+
+}
+
+/* Styles for the anchor tags within the controls-area div */
+.controls-area a {
+    display: inline-block;
+
+    margin: 20px;
+    padding: 10px 20px;
+    /* Add padding around the button text */
+    border: none;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Styles for the buttons with different classes */
+.btn--big {
+    font-size: 34px;
+    border-radius: 4px;
+}
+
+.btn--green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn--blue {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn--orange {
+    background-color: #f39c12;
+    color: white;
 }
 
 /* register */
