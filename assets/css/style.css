@@ -82,6 +82,7 @@ body {
     text-align: center;
 }
 
+/* style for register anchor */
 .register a {
     text-decoration: none;
     cursor: pointer;
