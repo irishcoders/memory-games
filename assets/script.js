@@ -1,56 +1,66 @@
 // JavaScript code for the quiz game
+// Global variables to keep track of the game state
+let currentQuestion = 0;
+let correctScore = 0;
+let incorrectScore = 0;
+const totalQuestions = 25;
+
+// Array of quiz questions and answers
 const quizData = [
     {
-        imageSrc: "assets/images/flags/nigeria.jpeg",
-        answer: "nigeria",
+        imageSrc: 'image.jpeg',
+        answer: 'lion',
+        category: 'Animal Kingdoms'
     },
-    {
-        imageSrc: "assets/images/flags/Ireland.jpeg",
-        answer: "ireland",
-    },
-    // Add more questions here...
+    // Add more quiz questions and answers for other categories here
 ];
 
-let currentQuestion = 0;
-let score = 0;
-
-const imageElement = document.getElementById("image");
-const answerBox = document.getElementById("answer-box");
-const submitButton = document.getElementById("submit-btn");
-const scoreElement = document.getElementById("score");
-const incorrectScore = document.getElementById("incorrect");
-
-// Function to load the current question (image)
+// Function to load the current question (image) and reset the message
 function loadQuestion() {
-    const currentQuiz = quizData[currentQuestion];
-    imageElement.src = currentQuiz.imageSrc;
-    answerBox.value = "";
-    answerBox.focus();
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
+    document.getElementById("message").textContent = "";
+
+    if (currentQuestion < totalQuestions) {
+        const currentQuiz = quizData[currentQuestion];
+        document.getElementById("image").src = currentQuiz.imageSrc;
+        document.getElementById("remaining").textContent = totalQuestions - currentQuestion;
+    } else {
+        // Display the final score after all questions are answered
+        document.getElementById("quiz-container").innerHTML = `<p id="final-message">Game Over! You scored ${correctScore} out of ${totalQuestions}</p>`;
+    }
 }
 
 // Function to check the user's answer
 function checkAnswer() {
-    const userAnswer = answerBox.value.toLowerCase().trim();
+    const userAnswer = document.getElementById("answer-box").value.toLowerCase().trim();
     const currentQuiz = quizData[currentQuestion];
 
     if (userAnswer === currentQuiz.answer.toLowerCase()) {
-        score++;
+        // Correct answer
+        document.getElementById("message").textContent = "Well done! You got it!";
+        correctScore++;
+        document.getElementById("correct-score").textContent = correctScore;
+    } else {
+        // Incorrect answer
+        document.getElementById("message").textContent = `Sorry, that's incorrect. The correct answer is "${currentQuiz.answer}"`;
+        incorrectScore++;
+        document.getElementById("incorrect-score").textContent = incorrectScore;
     }
 
     currentQuestion++;
-    if (currentQuestion < quizData.length) {
-        loadQuestion();
-    } else {
-        // Display the final score or redirect to another page after all questions are answered
-        imageElement.style.display = "none";
-        answerBox.style.display = "none";
-        submitButton.style.display = "none";
-        scoreElement.textContent = `Final Score: ${score} out of ${quizData.length}`;
-    }
+    loadQuestion();
 }
 
 // Event listener for the submit button to check the answer and load the next question
-submitButton.addEventListener("click", checkAnswer);
+document.getElementById("submit-btn").addEventListener("click", checkAnswer);
 
-// Start the quiz when the page loads (optional)
-loadQuestion();
+// Event listener for the Enter key in the answer box
+document.getElementById("answer-box").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+});
+
+// Start the quiz when the DOM loads
+document.addEventListener("DOMContentLoaded", loadQuestion);

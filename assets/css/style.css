@@ -94,29 +94,43 @@ body {
 
 /* Styles for the quiz-container */
 #quiz-container {
-    max-width: 830px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
-    /*
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  */
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the image */
 #image {
-    max-width: 40%;
+    width: 60%;
+    height: 60%;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    /* Center the image and add margin at the bottom */
+    display: block;
+    /* Display the image on its own line */
+}
+
+/* Styles for the answer box and submit button container */
+#answer-container {
+    display: flex;
+    /* Use flexbox to place the answer box and submit button side by side */
+    align-items: center;
+    /* Vertically center the items */
+    justify-content: center;
+    /* Horizontally center the items */
 }
 
 /* Styles for the answer box */
 #answer-box {
-    width: 30%;
+    width: 60%;
     padding: 10px;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    /* Add some spacing between the answer box and submit button */
     border: 2px solid #ccc;
     border-radius: 5px;
 }
@@ -138,26 +152,31 @@ body {
     background-color: #45a049;
 }
 
-/* Styles for the score */
+/* Styles for the score and message */
+#message,
 #score {
     font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Responsive styles for smaller screens */
+/* Media Query for responsiveness on smaller screens */
 @media screen and (max-width: 500px) {
     #quiz-container {
         max-width: 90%;
-        /* Adjust the width for smaller screens */
+    }
+
+    #image {
+        width: 80%;
+        height: auto;
     }
 
     #answer-box {
+        width: 80%;
         font-size: 14px;
-        /* Adjust the font size for smaller screens */
     }
 
     #submit-btn {
         font-size: 14px;
-        /* Adjust the font size for smaller screens */
     }
 }
