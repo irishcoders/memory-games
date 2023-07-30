@@ -92,7 +92,88 @@ body {
 
 /* guessgame.html style starts here */
 
+.question-area {
+    width: 50%;
+    font-size: 2rem;
+    margin: auto;
+    padding: 50px 0;
+}
+
+#image {
+    width: 90px;
+    height: 50vh;
+}
+
+.question-area span {
+    padding: 0 15px;
+}
+
+.score-area {
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+#remaining {
+    color: white;
+    font-weight: bold;
+}
+
+.answer-message {
+    display: none;
+    font-size: 1rem;
+}
+
+#answer-box {
+    border: none;
+    color: #445361;
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    font-size: 1.2rem;
+}
+
+.scores {
+    display: inline-block;
+    padding: 25px;
+}
+
+.btn--gray {
+    margin-top: 25px;
+    background-color: #445361;
+    border: 1px transparent;
+    border-radius: 20px;
+}
+
+.btn--gray:active,
+.btn--gray:hover {
+    background-color: #0d1013;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Styles for the quiz-container */
+/*
 #quiz-container {
     max-width: 500px;
     margin: 0 auto;
@@ -103,39 +184,39 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the image */
+ Style for the image 
 #image {
     width: 60%;
     height: 60%;
     border-radius: 5px;
     margin: 0 auto 20px;
-    /* Center the image and add margin at the bottom */
+    /* Center the image and add margin at the bottom 
     display: block;
-    /* Display the image on its own line */
+    /* Display the image on its own line 
 }
 
-/* Styles for the answer box and submit button container */
+/* Styles for the answer box and submit button container 
 #answer-container {
     display: flex;
-    /* Use flexbox to place the answer box and submit button side by side */
+    /* Use flexbox to place the answer box and submit button side by side 
     align-items: center;
-    /* Vertically center the items */
+    /* Vertically center the items 
     justify-content: center;
-    /* Horizontally center the items */
+    /* Horizontally center the items 
 }
 
-/* Styles for the answer box */
+/* Styles for the answer box 
 #answer-box {
     width: 60%;
     padding: 10px;
     font-size: 16px;
     margin-right: 10px;
-    /* Add some spacing between the answer box and submit button */
+    /* Add some spacing between the answer box and submit button 
     border: 2px solid #ccc;
     border-radius: 5px;
 }
 
-/* Styles for the submit button */
+/* Styles for the submit button 
 #submit-btn {
     padding: 10px 20px;
     font-size: 16px;
@@ -147,12 +228,12 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Change submit button color on hover */
+/* Change submit button color on hover 
 #submit-btn:hover {
     background-color: #45a049;
 }
 
-/* Styles for the score and message */
+/* Styles for the score and message 
 #message,
 #score {
     font-size: 18px;

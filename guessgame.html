@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Google font link-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--Favicon links here-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,17 +21,21 @@
         <a href="index.html#home">Quit Game</a>
     </nav>
     <!-- HTML structure for the quiz game -->
-
-    <div id="quiz-container">
-        <img id="image" src="" alt="Image to guess">
-        <input type="text" id="answer-box" placeholder="Your answer">
-        <button id="submit-btn">Submit</button>
+    <div class="quiz-container" id="quiz-container">
+        <div class="question-area">
+            <span id="question">Question Here</span>
+            <span>=</span>
+            <p class="answer-message">Enter Answer:</p>
+            <input id="answer-box" type="text">
+            <button data-type="submit" class="btn btn--gray">Submit Answer</button>
+        </div>
+    </div>
+    <div class="score-area">
+        <p class="scores">Correct Answers: <span id="score">0</span></p>
+        <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
+        <p class="remaining">Remaining: <span id="remaining">2</span></p>
         <p id="message"></p>
-        <p id="score">Correct Answers: <span id="correct-score">0</span> | Incorrect Answers: <span
-                id="incorrect-score">0</span> | Remaining: <span id="remaining">25</span></p>
     </div>
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/9f28b87073.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
