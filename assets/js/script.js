@@ -1,20 +1,20 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button element and add event listeners to it
 
-document.addEventListener("DOMContentLoaded", funtion () {
-    let button = document.getElementByTagName("button");
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
 
-    for(button) {
+    for (let button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") == "submit") {
+            if (this.getAttribute("data-type") === "submit") {
                 alert("You Clicked Submit");
             } else {
                 let buttonType = this.getAttribute("data-type");
                 alert(`you clicked ${buttonType}`);
             }
-        })
+        });
     }
-})
+});
 function runGame() {
 
 }
