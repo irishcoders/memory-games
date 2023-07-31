@@ -1,7 +1,7 @@
 let currentQuestion = 0;
 let correctScore = 0;
 let incorrectScore = 0;
-let totalQuestions = 25; // Change this to the total number of questions
+let totalQuestions = 25; // total number of questions in the quizdata
 
 let quizDatas = [
     { imageSrc: 'assets/images/flags/argentina.jpeg', answer: 'argentina' },
@@ -146,7 +146,7 @@ function resetGame() {
     // Clear the alert
     document.getElementById("message").textContent = "";
 
-    // Update the score elements to show 0
+    // reset the score boxes back to 0
     document.getElementById("score").textContent = "0";
     document.getElementById("incorrect").textContent = "0";
     document.getElementById("remaining").textContent = totalQuestions;
