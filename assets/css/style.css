@@ -16,8 +16,40 @@ body {
     height: 40px;
     width: 60px;
     padding-right: -1px;
+    margin-top: 1px;
     border: 1px solid burlywood;
 }
+
+/* Nav bar to return to home page */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #445361;
+    /* Background color */
+    padding: 10px;
+    /* Add some padding to the navigation */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    /* Text color */
+    font-size: 18px;
+    padding: 10px 20px;
+    /* Add padding around the link */
+    border-radius: 5px;
+    /* Add rounded corners to the link */
+    transition: background-color 0.3s;
+    /* Add transition effect */
+}
+
+a:hover {
+    background-color: #0d1013;
+    /* Hover background color */
+}
+
 
 /* Game List Area */
 
@@ -25,7 +57,7 @@ body {
     background-color: #0b4873;
     box-sizing: border-box;
     width: 65%;
-    height: 55vh;
+    height: 40vh;
     max-height: 450px;
     max-width: 830px;
     margin-left: auto;
@@ -66,15 +98,270 @@ body {
     color: white;
 }
 
-.btn--blue {
-    background-color: #3498db;
-    color: white;
-}
-
 .btn--orange {
     background-color: #f39c12;
     color: white;
 }
+
+/* Flag game page */
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    width: 100%;
+}
+
+.game-area>h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Adjust the styles for the flag game question area */
+.question-area {
+    width: 80%;
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.question-area #image {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.question-area input,
+.question-area button {
+    display: inline-block;
+    margin: 10px auto;
+}
+
+#message {
+    text-align: center;
+}
+
+/* flag game score area style */
+.score-area {
+    margin: 5px auto;
+    width: 70%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+#remaining {
+    color: rgb(36, 21, 2);
+    font-weight: bold;
+}
+
+#answer-box {
+    border: 2px solid #ccc;
+    color: #445361;
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+
+.btn--gray {
+    background-color: #445361;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+    transition: all 0.5s;
+}
+
+.btn--gray:active,
+.btn--gray:hover {
+    background-color: #0d1013;
+}
+
+.scores {
+    display: inline-block;
+    padding: 25px;
+}
+
+
+/* Math Game page */
+
+.math-game-area {
+    box-sizing: border-box;
+    width: 85%;
+    height: 70vh;
+    max-height: 500px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    text-align: center;
+}
+
+.math-question-area {
+    width: 50%;
+    font-size: 2rem;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.math-question-area span {
+    padding: 0 15px;
+}
+
+.math-score-area {
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.controls-area {
+    width: 85%;
+    margin: 30px auto;
+}
+
+#math-score {
+    color: green;
+    font-weight: bold;
+}
+
+#math-incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+.math-answer-message {
+    display: none;
+    font-size: 1rem;
+}
+
+#math-answer-box {
+    border: none;
+    color: #445361;
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    font-size: 1.2rem;
+}
+
+.math-scores {
+    display: inline-block;
+    padding: 25px;
+}
+
+/* ----Mathgame Buttons--- */
+
+.m-btn {
+    width: 220px;
+    height: 60px;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.m-btn:focus {
+    outline: none;
+}
+
+.m-btn--big {
+    padding-top: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: 10px solid;
+    width: 100px;
+    height: 100px;
+    font-size: 3.2rem;
+    margin: 0 30px;
+    transition: all 0.5s;
+}
+
+.m-btn--big::after {
+    content: attr(data-type);
+    font-size: 1rem;
+    color: #445361;
+    position: relative;
+    left: -0.5em;
+
+}
+
+.m-btn--blue {
+    border-color: blue;
+    color: blue;
+}
+
+.m-btn--blue:active,
+.m-btn--blue:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.m-btn--orange {
+    border-color: orange;
+    color: orange;
+}
+
+.m-btn--orange:active,
+.m-btn--orange:hover {
+    background-color: darkorange;
+    color: white;
+}
+
+.m-btn--red {
+    border-color: red;
+    color: red;
+}
+
+.m-btn--red:active,
+.m-btn--red:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.m-btn--green {
+    border-color: green;
+    color: green;
+}
+
+.m-btn--green:active,
+.m-btn--green:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.m-btn--gray {
+    margin-top: -15px;
+    background-color: #445361;
+    border: 1px transparent;
+    border-radius: 20px;
+}
+
+.m-btn--gray:active,
+.m-btn--gray:hover {
+    background-color: #0d1013;
+}
+
 
 /* register */
 
@@ -90,156 +377,6 @@ body {
     color: rgb(36, 21, 2);
 }
 
-/* guessgame.html style starts here */
-
-.question-area {
-    width: 50%;
-    font-size: 2rem;
-    margin: auto;
-    padding: 50px 0;
-}
-
-#image {
-    width: 90px;
-    height: 50vh;
-}
-
-.question-area span {
-    padding: 0 15px;
-}
-
-.score-area {
-    margin: 5px auto;
-    width: 60%;
-    font-size: 1.2rem;
-}
-
-#score {
-    color: green;
-    font-weight: bold;
-}
-
-#incorrect {
-    color: red;
-    font-weight: bold;
-}
-
-#remaining {
-    color: white;
-    font-weight: bold;
-}
-
-.answer-message {
-    display: none;
-    font-size: 1rem;
-}
-
-#answer-box {
-    border: none;
-    color: #445361;
-    display: inline-block;
-    height: 40px;
-    width: 80px;
-    font-size: 1.2rem;
-}
-
-.scores {
-    display: inline-block;
-    padding: 25px;
-}
-
-.btn--gray {
-    margin-top: 25px;
-    background-color: #445361;
-    border: 1px transparent;
-    border-radius: 20px;
-}
-
-.btn--gray:active,
-.btn--gray:hover {
-    background-color: #0d1013;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Styles for the quiz-container */
-/*
-#quiz-container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
- Style for the image 
-#image {
-    width: 60%;
-    height: 60%;
-    border-radius: 5px;
-    margin: 0 auto 20px;
-    /* Center the image and add margin at the bottom 
-    display: block;
-    /* Display the image on its own line 
-}
-
-/* Styles for the answer box and submit button container 
-#answer-container {
-    display: flex;
-    /* Use flexbox to place the answer box and submit button side by side 
-    align-items: center;
-    /* Vertically center the items 
-    justify-content: center;
-    /* Horizontally center the items 
-}
-
-/* Styles for the answer box 
-#answer-box {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-    /* Add some spacing between the answer box and submit button 
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Styles for the submit button 
-#submit-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Change submit button color on hover 
-#submit-btn:hover {
-    background-color: #45a049;
-}
-
-/* Styles for the score and message 
-#message,
-#score {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
 
 /* Media Query for responsiveness on smaller screens */
 @media screen and (max-width: 500px) {

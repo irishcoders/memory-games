@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Google font link-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!--Favicon links here-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Brain Teaser Games</title>
+</head>
+
+<body>
+    <nav>
+        <a href="mathgame.html">Restart Game</a>
+        <a href="index.html#home">Quit Game</a>
+    </nav>
+
+    <div class="math-game-area">
+        <h2>Enter the correct answer below:</h2>
+        <div class="controls-area">
+            <button data-type="addition" class="m-btn m-btn--big m-btn--green">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button data-type="subtract" class="m-btn m-btn--big m-btn--blue">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button data-type="multiply" class="m-btn m-btn--big m-btn--orange">
+                <i class="fas fa-times"></i>
+            </button>
+            <button data-type="division" class="m-btn m-btn--big m-btn--red">
+                <i class="fas fa-divide"></i>
+            </button>
+        </div>
+        <div class="math-question-area">
+            <span id="operand1">0</span>
+            <span id="operator">x</span>
+            <span id="operand2">0</span>
+            <span>=</span>
+            <p class="math-answer-message">Enter Answer:</p>
+            <input id="math-answer-box" type="number">
+        </div>
+        <button data-type="submit" class="m-btn m-btn--gray">Submit Answer</button>
+    </div>
+
+    <div class="math-score-area">
+        <p class="math-scores">Correct Answers <span id="math-score">0</span></p>
+        <p class="math-scores">Incorrect Answers <span id="math-incorrect">0</span></p>
+    </div>
+
+    <script src="assets/js/mathgame.js"></script>
+    <script src="https://kit.fontawesome.com/9f28b87073.js" crossorigin="anonymous"></script>
+</body>

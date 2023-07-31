@@ -13,28 +13,34 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Brain Teaser Games</title>
 </head>
 
 <body>
     <nav>
+        <a href="guessgame.html">Restart Game</a>
         <a href="index.html#home">Quit Game</a>
     </nav>
-    <!-- HTML structure for the quiz game -->
-    <div class="quiz-container" id="quiz-container">
-        <div class="question-area">
-            <img id="image" src="" alt="quiz image">
-            <span>=</span>
-            <p class="answer-message">Enter Answer:</p>
-            <input id="answer-box" type="text">
-            <button data-type="submit" class="btn btn--gray">Submit Answer</button>
+    <div class="game-area">
+        <h2>Enter the name of the country the flag belongs to: </h2>
+        <!-- HTML structure for the quiz game -->
+        <div class="quiz-container" id="quiz-container">
+            <div class="question-area">
+                <img id="image" src="" alt="quiz image">
+
+                <input id="answer-box" type="text">
+                <button data-type="submit" class="btn btn--gray">Submit Answer</button>
+            </div>
+        </div>
+        <div>
+            <p id="message"></p>
         </div>
     </div>
     <div class="score-area">
         <p class="scores">Correct Answers: <span id="score">0</span></p>
         <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
-        <p class="remaining">Remaining: <span id="remaining">2</span></p>
-        <p id="message"></p>
+        <p class="scores">Remaining: <span id="remaining">25</span></p>
     </div>
 
     <script src="assets/js/script.js"></script>
