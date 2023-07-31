@@ -31,6 +31,7 @@ body {
     margin-top: 10px;
     border: 1px solid burlywood;
     margin-right: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Nav bar to return to home page */
@@ -261,8 +262,8 @@ a:hover {
 }
 
 .math-game-area>h2 {
-    color: black;
-    text-shadow: 2px 2px 4px #445361;
+    color: #0d1013;
+    text-shadow: 2px 2px 4px aliceblue;
 }
 
 .math-question-area {
@@ -408,6 +409,7 @@ a:hover {
 .m-btn--gray {
     margin-top: -15px;
     background-color: #445361;
+    text-shadow: 2px 2px 4px black;
     border: 1px transparent;
     border-radius: 20px;
 }
