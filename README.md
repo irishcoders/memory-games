@@ -1,6 +1,6 @@
 # Brain Teaser Games
 
-![BT logo](btlogo.png)
+![BT logo](assets/images/btlogo.png)
 
 Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players.
 
@@ -41,7 +41,7 @@ To run the Brain Teaser Games app locally for development and testing purposes, 
 1. Clone the repository:
 
    ```bash
-    git clone <https://github.com/your-username/brain-teaser-games.git>
+    git clone <https://github.com/irishcoders/memory-games.git>
     ```
 
     Alternatively, you can download the ZIP file and extract it to your local machine.
@@ -49,7 +49,7 @@ To run the Brain Teaser Games app locally for development and testing purposes, 
 2. Navigate to the project directory:
 
    ```bash
-    cd brain-teaser-games
+    cd memory-games
     ```
 
 3. Install dependencies:
@@ -85,7 +85,7 @@ We would like to give credit to the following sources:
 
 - Code Institute's Love Math project, which served as the inspiration for the math game in our app.
 
-- Adam Khoury Javascript Youtube tutorial (https://youtu.be/tLxBwSL3lPQ)for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
+- Adam Khoury Javascript Youtube tutorial (https://youtu.be/tLxBwSL3lPQ) for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
 
 ## Contributing
 
