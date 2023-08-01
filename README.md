@@ -1,39 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Brain Teaser Games
 
-Welcome,
+![BT logo](btlogo.png)
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+# Features
 
-## Codeanywhere Reminders
+## Flag Quiz
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+- The Flag Quiz game challenges users to identify the country associated with a displayed flag.
+- The game consists of 25 questions, testing the player's knowledge of flags from around the world.
+- At the end of the quiz, the user will receive their score, and the app will provide feedback on their performance.
 
-`python3 -m http.server`
+## Basic Calculation
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- Basic Calculation is a math-based game that quizzes users on four different data types: addition, subtraction, multiplication, and division.
+- Players can select the specific math operation they want to play.
+- The game is designed to help users improve their math skills while having fun.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## Game Upcoming Update
 
-`http_server`
+We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Future Upcoming Games
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+In the future, we plan to expand the Brain Teaser Games app by adding more exciting games. Some of the upcoming games include:
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Spelling Game: Test your spelling skills by guessing the correct spelling of words.
+- Word Meaning: Guess the meaning of various words and learn new vocabulary.
+- Guess the Brand Name: Identify famous brands based on their logos or descriptions.
+- Fill in the Gap: Complete sentences by filling in the missing words.
+- And more..
+  
+## Usage
 
-To log into the Heroku toolbelt CLI:
+### Running the App Locally
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+To run the Brain Teaser Games app locally for development and testing purposes, follow these steps:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+1. Clone the repository:
 
----
+   ```bash
+    git clone <https://github.com/your-username/brain-teaser-games.git>
+    ```
 
-Happy coding!
+    Alternatively, you can download the ZIP file and extract it to your local machine.
+
+2. Navigate to the project directory:
+
+   ```bash
+    cd brain-teaser-games
+    ```
+
+3. Install dependencies:
+   `npm install`
+
+4. Start the development server:
+
+    ```sql
+    npm start
+    ```
+
+5. Once the server is running, open your web browser, and visit `http://localhost:3000` to access the app.
+
+## Testing the App
+
+To run the automated tests for the Brain Teaser Games app, use the following command:
+
+ ```bash
+ npm test
+ ```
+
+This will execute the test suite and provide feedback on the app's functionality.
+
+## Future Development
+
+We are excited to expand the app's game collection and enhance the user experience. The upcoming games will offer diverse challenges and learning opportunities. We also plan to create a mobile app version to make Brain Teaser Games easily accessible on smartphones and tablets.
+
+## Credits
+
+We would like to give credit to the following sources:
+
+- Unsplash (unsplash.com) and Pexels (pexels.com) for providing the images used in the project.
+
+- Code Institute's Love Math project, which served as the inspiration for the math game in our app.
+
+- Adam Khoury Javascript Youtube tutorial (https://youtu.be/tLxBwSL3lPQ)for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
+
+## Contributing
+
+At the moment, this project is the second assignment project for me, Oluwaseyi Babalola under the full stack web development program at Code Institute. As such, we are not accepting external contributions at this time.
+
+However, we appreciate your interest in the project, and if you have any suggestions or feedback, feel free to reach out to us
