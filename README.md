@@ -2,7 +2,7 @@
 
 ![BT logo](assets/images/btlogo.png)
 
-Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players.
+Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app has gone through testing and debugging stages.
 
 ![BT Game pages](assets/images/btgamepage.png)
 
@@ -15,7 +15,7 @@ Brain Teaser Games is a web-based application designed for users of all ages to 
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
 - At the end of the quiz, the user will receive their score, and the app will provide feedback on their performance.
-- Also at the end of the quiz, A **Restart _game_** message is displayed on the screen to ask users if they would like another try.
+- Also at the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like another try.
 
 ## Basic Calculation
 
@@ -36,7 +36,6 @@ The game has a register/signup page where users can sign up to receive game upda
 - We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
 
 - We are also working on setting difficulty level to the maths game and setting a total number of questions and a pass mark for users who play the game
-
 
 ## Future Upcoming Games
 
@@ -89,6 +88,48 @@ To run the automated tests for the Brain Teaser Games app, use the following com
 
 This will execute the test suite and provide feedback on the app's functionality.
 
+## Troubleshooting
+
+### Common Debugging Errors
+
+While running the Brain Teaser Games app, you might encounter some common debugging errors. Below are examples of potential issues and their resolutions:
+
+1. Null Reference Error
+    **Error Description:** This error occurs when the code attempts to access a property or call a method on an object that is null or undefined.
+    **Example:**
+
+    ```javascript
+    function updateScore() {
+
+  // Get the score element from the DOM
+  var scoreElement = document.getElementById('score');
+
+  // Update the score text
+  scoreElement.textContent = score;
+  }
+
+   ```
+
+**Solution:** To avoid this error, it's essential to check if the element exists before accessing its properties or calling methods on it.
+
+**Updated Code:**
+``` javascript
+function updateScore() {
+  // Get the score element from the DOM
+  var scoreElement = document.getElementById('score');
+
+  // Check if the element exists before updating the score
+  if (scoreElement) {
+    scoreElement.textContent = score;
+  } else {
+    console.error("Score element not found!");
+  }
+}
+```
+
+By following the above fix, the code will handle the situation where the element with the ID "score" is not found in the HTML document, preventing the Null Reference Error.
+
+
 ## Future Development
 
 We are excited to expand the app's game collection and enhance the user experience. The upcoming games will offer diverse challenges and learning opportunities. We also plan to create a mobile app version to make Brain Teaser Games easily accessible on smartphones and tablets.
@@ -103,8 +144,17 @@ We would like to give credit to the following sources:
 
 - Adam Khoury Javascript Youtube tutorial (<https://youtu.be/tLxBwSL3lPQ>) for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
 
+- PythonTutor for testing all the code before pasting them in VSCode
+
+- Google searches for learning more about iteration and building complex javascript in the DOM. 
+  
+
 ## Contributing
 
 At the moment, this project is the second assignment project for me, Oluwaseyi Babalola under the full stack web development program at Code Institute. As such, we are not accepting external contributions at this time.
 
 However, we appreciate your interest in the project, and if you have any suggestions or feedback, feel free to reach out to us
+
+## Licensing
+
+This project is the second project in my Full Stack Web Development program and this app is developed to be submitted as my javascript project at (CodeInstitute.com)
