@@ -92,43 +92,43 @@ This will execute the test suite and provide feedback on the app's functionality
 
 ### Common Debugging Errors
 
-While running the Brain Teaser Games app, you might encounter some common debugging errors. Below are examples of potential issues and their resolutions:
+While running the Brain Teaser Games app, you might encounter some common debugging errors. Below is an example of a potential issue and its solution:
 
-1. Null Reference Error
-    **Error Description:** This error occurs when the code attempts to access a property or call a method on an object that is null or undefined.
+- Null Reference Error
+  
+**Error Description:** This error occurs when the code attempts to access a property or call a method on an object that is null or undefined.
     **Example:**
 
-    ```javascript
+```javascript
     function updateScore() {
 
-  // Get the score element from the DOM
-  var scoreElement = document.getElementById('score');
+        // Get the score element from the DOM
+        var scoreElement = document.getElementById('score');
 
-  // Update the score text
-  scoreElement.textContent = score;
-  }
-
-   ```
+        // Update the score text
+            scoreElement.textContent = score;
+        }
+```
 
 **Solution:** To avoid this error, it's essential to check if the element exists before accessing its properties or calling methods on it.
 
 **Updated Code:**
-``` javascript
-function updateScore() {
-  // Get the score element from the DOM
-  var scoreElement = document.getElementById('score');
 
-  // Check if the element exists before updating the score
-  if (scoreElement) {
-    scoreElement.textContent = score;
-  } else {
-    console.error("Score element not found!");
-  }
-}
+```javascript
+     function updateScore() {
+            // Get the score element from the DOM
+            var scoreElement = document.getElementById('score');
+
+            // Check if the element exists before updating the score
+            if (scoreElement) {
+                scoreElement.textContent = score;
+            } else {
+                console.error("Score element not found!");
+            }
+        }
 ```
 
 By following the above fix, the code will handle the situation where the element with the ID "score" is not found in the HTML document, preventing the Null Reference Error.
-
 
 ## Future Development
 
@@ -138,7 +138,7 @@ We are excited to expand the app's game collection and enhance the user experien
 
 We would like to give credit to the following sources:
 
-- Unsplash (unsplash.com) and Pexels (pexels.com) for providing the images used in the project.
+- Unsplash (<https://www.unsplash.com>) and Pexels (<https://pexels.com>) for providing the images used in the project.
 
 - Code Institute's Love Math project, which served as the inspiration for the math game in our app.
 
@@ -146,9 +146,8 @@ We would like to give credit to the following sources:
 
 - PythonTutor for testing all the code before pasting them in VSCode
 
-- Google searches for learning more about iteration and building complex javascript in the DOM. 
+- Google searches for learning more about iteration and building complex javascript in the DOM.
   
-
 ## Contributing
 
 At the moment, this project is the second assignment project for me, Oluwaseyi Babalola under the full stack web development program at Code Institute. As such, we are not accepting external contributions at this time.
