@@ -4,23 +4,39 @@
 
 Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players.
 
+![BT Game pages](assets/images/btgamepage.png)
+
 # Features
 
 ## Flag Quiz
 
+![BT FlagGame page](assets/images/flaggame.png)
+
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
 - At the end of the quiz, the user will receive their score, and the app will provide feedback on their performance.
+- Also at the end of the quiz, A **Restart _game_** message is displayed on the screen to ask users if they would like another try.
 
 ## Basic Calculation
+
+![BT MathGame pages](assets/images/mathgame.png)
 
 - Basic Calculation is a math-based game that quizzes users on four different data types: addition, subtraction, multiplication, and division.
 - Players can select the specific math operation they want to play.
 - The game is designed to help users improve their math skills while having fun.
+  
+## Registration
+
+![BT Register page](assets/images/registerpage.png)
+
+The game has a register/signup page where users can sign up to receive game updates and activities. The register page has been made very simple and straight-forward so that users can fill up their details in very little time.
 
 ## Game Upcoming Update
 
-We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
+- We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
+
+- We are also working on setting difficulty level to the maths game and setting a total number of questions and a pass mark for users who play the game
+
 
 ## Future Upcoming Games
 
@@ -85,7 +101,7 @@ We would like to give credit to the following sources:
 
 - Code Institute's Love Math project, which served as the inspiration for the math game in our app.
 
-- Adam Khoury Javascript Youtube tutorial (https://youtu.be/tLxBwSL3lPQ) for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
+- Adam Khoury Javascript Youtube tutorial (<https://youtu.be/tLxBwSL3lPQ>) for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
 
 ## Contributing
 
