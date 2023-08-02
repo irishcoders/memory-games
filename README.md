@@ -36,6 +36,8 @@ The game has a register/signup page where users can sign up to receive game upda
 - We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
 
 - We are also working on setting difficulty level to the maths game and setting a total number of questions and a pass mark for users who play the game
+  
+- We are also working on improving math game accessibility across all devices and this will be fixed in the next update
 
 ## Future Upcoming Games
 
@@ -133,6 +135,11 @@ By following the above fix, the code will handle the situation where the element
 ### Other Debugging processes
 
 The app `html` and `ccs` code has been tested using The W3C Mark Up Validator (<https://validator.w3.org/nu/#textarea>) and The W3C CSS Validator (<https://jigsaw.w3.org/css-validator/validator>). A LightHouse test has also been carried out during the debugging phase of the app development.
+
+### Unfixed Bugs
+
+- The Math Game media query needs resizing on smaller device. Still in the process of resolving and will be fixed in the next game update. 
+- LightHouse reports 68% for Math Game accesibility and this will be fixed in the next game update.
 
 ## Future Development
 
