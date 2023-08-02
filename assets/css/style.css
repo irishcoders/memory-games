@@ -183,6 +183,14 @@ a:hover {
     margin: 10px auto;
 }
 
+.question-area .answer-box {
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px white;
+}
+
 #message {
     text-align: center;
     font-weight: bold;
@@ -328,7 +336,7 @@ a:hover {
 
 /* ----Mathgame Buttons--- */
 
-.m-btn {
+.btn-m {
     width: 220px;
     height: 60px;
     font-family: "Raleway", sans-serif;
@@ -337,11 +345,11 @@ a:hover {
     color: white;
 }
 
-.m-btn:focus {
+.btn-m:focus {
     outline: none;
 }
 
-.m-btn--big {
+.btn--big-m {
     padding-top: 10px;
     border-radius: 50%;
     background-color: white;
@@ -353,7 +361,7 @@ a:hover {
     transition: all 0.5s;
 }
 
-.m-btn--big::after {
+.btn--big-m::after {
     content: attr(data-type);
     font-size: 1rem;
     color: #445361;
@@ -362,51 +370,51 @@ a:hover {
 
 }
 
-.m-btn--blue {
+.btn--blue-m {
     border-color: blue;
     color: blue;
 }
 
-.m-btn--blue:active,
-.m-btn--blue:hover {
+.btn--blue-m:active,
+.btn--blue-m:hover {
     background-color: darkblue;
     color: white;
 }
 
-.m-btn--orange {
+.btn--orange-m {
     border-color: orange;
     color: orange;
 }
 
-.m-btn--orange:active,
-.m-btn--orange:hover {
+.btn--orange-m:active,
+.btn--orange-m:hover {
     background-color: darkorange;
     color: white;
 }
 
-.m-btn--red {
+.btn--red-m {
     border-color: red;
     color: red;
 }
 
-.m-btn--red:active,
-.m-btn--red:hover {
+.btn--red-m:active,
+.btn--red-m:hover {
     background-color: darkred;
     color: white;
 }
 
-.m-btn--green {
+.btn--green-m {
     border-color: green;
     color: green;
 }
 
-.m-btn--green:active,
-.m-btn--green:hover {
+.btn--green-m:active,
+.btn--green-m:hover {
     background-color: darkgreen;
     color: white;
 }
 
-.m-btn--gray {
+.btn--gray-m {
     margin-top: -15px;
     background-color: #445361;
     text-shadow: 2px 2px 4px black;
@@ -414,8 +422,8 @@ a:hover {
     border-radius: 20px;
 }
 
-.m-btn--gray:active,
-.m-btn--gray:hover {
+.btn--gray-m:active,
+.btn--gray-m:hover {
     background-color: #0d1013;
 }
 
@@ -434,7 +442,6 @@ a:hover {
     text-align: center;
     font-size: 2rem;
     color: rgb(36, 21, 2);
-    padding-left: -10px;
     border: 1px solid burlywood;
     margin-top: 30px;
 }
