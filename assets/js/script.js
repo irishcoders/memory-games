@@ -36,8 +36,14 @@ let quizDatas = [
 shuffleArray(quizDatas);
 
 document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
+    let button = document.getElementsByTagName("submit");
 
+    button.addEventListener("click", function () {
+        let ans = document.getElementById("answer-box");
+        let validAns = validateAns(ans.value);
+        
+    })
+===========
     for (let button of buttons) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+===========
     // Add event listener to handle Enter key event
     document.getElementById("answer-box").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
