@@ -45,31 +45,25 @@ document.addEventListener("DOMContentLoaded", function () {
         if (validAns == true) {
             checkAnswer();
         } else {
-            runGame(); // Call runGame() here to start game
+            runGame(); 
         }
         
-    });
-===========
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
-                checkAnswer();
-            } else {
-                let buttonType = this.getAttribute("data-type");
-                runGame();
-            }
-        });
-    }
-===========
-    // Add event listener to handle Enter key event
-    document.getElementById("answer-box").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            checkAnswer();
-        }
     });
 
     runGame(); // Call runGame() here to start game
 });
+
+function validateAns(answer) {
+    let error = document.getElementById("error");
+    if (answer-trim() == "") {
+        error.innerHTML = "Invalid Input. Please enter an answer.";
+        return false;
+    } else {
+        error.innerHTML = "";
+        return true;
+    }
+}
+// Call
 
 function runGame() {
     // This sets the answer box to empty after each game is played and recorded
