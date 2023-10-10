@@ -41,8 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
         let ans = document.getElementById("answer-box");
         let validAns = validateAns(ans.value);
+        button.disabled = true;
+        if (validAns == true) {
+            checkAnswer();
+        } else {
+            runGame(); // Call runGame() here to start game
+        }
         
-    })
+    });
 ===========
     for (let button of buttons) {
         button.addEventListener("click", function () {
