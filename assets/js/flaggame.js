@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (validAns == true) {
             checkAnswer();
         } else {
-            runGame(); 
+            runGame();
         }
-        
+
     });
 
     runGame(); // Call runGame() here to start game
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function validateAns(answer) {
     let error = document.getElementById("error");
-    if (answer-trim() == "") {
+    if (answer - trim() == "") {
         error.innerHTML = "Invalid Input. Please enter an answer.";
         return false;
     } else {
@@ -63,7 +63,6 @@ function validateAns(answer) {
         return true;
     }
 }
-// Call
 
 function runGame() {
     // This sets the answer box to empty after each game is played and recorded
