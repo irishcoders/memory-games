@@ -10,9 +10,9 @@ let quizDatas = [
     { imageSrc: 'assets/images/flags/croatia.jpeg', answer: 'croatia' },
     { imageSrc: 'assets/images/flags/germany.jpeg', answer: 'germany' },
     { imageSrc: 'assets/images/flags/ghana.jpeg', answer: 'ghana' },
-    { imageSrc: 'assets/images/flags/Greece.jpeg', answer: 'greece' },
+    { imageSrc: 'assets/images/flags/greece.jpeg', answer: 'greece' },
     { imageSrc: 'assets/images/flags/italy.jpeg', answer: 'italy' },
-    { imageSrc: 'assets/images/flags/Ireland.jpeg', answer: 'ireland' },
+    { imageSrc: 'assets/images/flags/ireland.jpeg', answer: 'ireland' },
     { imageSrc: 'assets/images/flags/latvia.jpeg', answer: 'latvia' },
     { imageSrc: 'assets/images/flags/malaysia.jpeg', answer: 'malaysia' },
     { imageSrc: 'assets/images/flags/mexico.jpeg', answer: 'mexico' },
@@ -21,8 +21,8 @@ let quizDatas = [
     { imageSrc: 'assets/images/flags/peru.jpeg', answer: 'peru' },
     { imageSrc: 'assets/images/flags/poland.jpeg', answer: 'poland' },
     { imageSrc: 'assets/images/flags/portugal.jpeg', answer: 'portugal' },
-    { imageSrc: 'assets/images/flags/Seychelles.jpeg', answer: 'seychelles' },
-    { imageSrc: 'assets/images/flags/SouthAfrica.jpeg', answer: 'south africa' },
+    { imageSrc: 'assets/images/flags/seychelles.jpeg', answer: 'seychelles' },
+    { imageSrc: 'assets/images/flags/south_africa.jpeg', answer: 'south africa' },
     { imageSrc: 'assets/images/flags/spain.jpeg', answer: 'spain' },
     { imageSrc: 'assets/images/flags/ukraine.jpeg', answer: 'ukraine' },
     { imageSrc: 'assets/images/flags/zimbabwe.jpeg', answer: 'zimbabwe' },
@@ -36,26 +36,25 @@ let quizDatas = [
 shuffleArray(quizDatas);
 
 document.addEventListener("DOMContentLoaded", function () {
-    let button = document.getElementsByTagName("submit");
+    let button = document.getElementById("submit");
 
     button.addEventListener("click", function () {
         let ans = document.getElementById("answer-box");
         let validAns = validateAns(ans.value);
         button.disabled = true;
-        if (validAns == true) {
+        if (validAns) {
             checkAnswer();
         } else {
             runGame();
         }
-
     });
 
-    runGame(); // Call runGame() here to start game
+    runGame(); // Call runGame() here to start the game
 });
 
 function validateAns(answer) {
     let error = document.getElementById("error");
-    if (answer - trim() == "") {
+    if (answer.trim() === "") {
         error.innerHTML = "Invalid Input. Please enter an answer.";
         return false;
     } else {
