@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
 /**
  * The main game "loop" will be called when the script is first loaded
  * and after the user's answer has been processed
@@ -63,22 +64,26 @@ function runGame(gameType) {
 /**
  * checks the answer against the first element in the calculateCorrectAnswer()
  * array
+ * Also checks if user submits without an input and displays an error message
  */
-function checkAnswer() {
-    let userAnswer = parseInt(document.getElementById("math-answer-box").value);
-    let calculatedAnswer = calculateCorrectAnswer();
-    let isCorrect = userAnswer === calculatedAnswer[0];
-
-    if (isCorrect) {
-        alert("Congrats! You got the correct answer");
-        incrementScore();
+ function checkAnswer() {
+    let userAnswer = document.getElementById("math-answer-box").value.trim(); // Trim the input
+    if (userAnswer === "") {
+        alert("Invalid input. Please enter your answer first, then press the Enter key or click Submit Answer to continue."); // msg for no input error
     } else {
-        alert(`Aww.. Your answer was wrong, your answer was ${userAnswer}, but the correct answer is ${calculatedAnswer[0]}!`);
-        incrementWrongAnswer();
+        let parsedAnswer = parseInt(userAnswer);
+        let calculatedAnswer = calculateCorrectAnswer();
+        if (parsedAnswer === calculatedAnswer[0]) {
+            alert("Congrats! You got the correct answer");
+            incrementScore();
+        } else {
+            alert(`Aww.. Your answer was wrong, your answer was ${parsedAnswer}, but the correct answer is ${calculatedAnswer[0]}!`);
+            incrementWrongAnswer();
+        }
+        runGame(calculatedAnswer[1]);
     }
-
-    runGame(calculatedAnswer[1]);
 }
+
 
 /**
  * Gets the operands (the random numbers) and operator (addition, divide etc)
