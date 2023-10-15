@@ -1,8 +1,3 @@
-let currentQuestion = 0;
-let correctScore = 0;
-let incorrectScore = 0;
-let totalQuestions = 25; // total number of questions in the quizdata
-
 let quizDatas = [
     { imageSrc: 'assets/images/flags/argentina.jpeg', answer: 'argentina' },
     { imageSrc: 'assets/images/flags/algeria.jpeg', answer: 'algeria' },
@@ -32,20 +27,70 @@ let quizDatas = [
 
 ];
 
+// arrage for holding the preloaded images
+const preloadedImages = []; 
+
 // Shuffle the quizDatas array to display questions in random order
 shuffleArray(quizDatas);
 
+// Function to shuffle an array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Function to preload images.
+function preloadImages() {
+    for (let i = 0; i < quizDatas.length; i++) {
+        const image = new Image();
+        image.src = quizDatas[i].imageSrc;
+        image.onload = function() {
+            // When an image is loaded, you can display it.
+            console.log(`Image preloaded: ${quizDatas[i].imageSrc}`);
+            // If you want to start the game when all images are preloaded, add the following line:
+            if (i === quizDatas.length - 1) {
+                runGame();
+            }
+        };
+        // Add the preloaded image to the array.
+        preloadedImages.push(image);
+    }
+}
+
+let currentQuestion = 0;
+let correctScore = 0;
+let incorrectScore = 0;
+let totalQuestions = 25; // total number of questions in the quizdata
+
+// Preload images before starting the game.
+preloadImages();
+
 document.addEventListener("DOMContentLoaded", function () {
     let button = document.getElementById("submit");
+    let ans = document.getElementById("answer-box");
 
-    button.addEventListener("click", function () {
-        let ans = document.getElementById("answer-box");
+    button.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the form from submitting
         let validAns = validateAns(ans.value);
-        button.disabled = true;
         if (validAns) {
             checkAnswer();
         } else {
             runGame();
+        }
+    });
+
+    // Add an event listener for the Enter key press
+    ans.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            let validAns = validateAns(ans.value);
+            if (validAns) {
+                checkAnswer();
+            } else {
+                runGame();
+            }
         }
     });
 
@@ -156,12 +201,4 @@ function resetGame() {
     document.getElementById("remaining").textContent = totalQuestions;
 
     runGame(); // Restart the game
-}
-
-// Function to shuffle an array using Fisher-Yates algorithm
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
 }
