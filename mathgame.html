@@ -28,13 +28,13 @@
         <!--math game area-->
         <h2>Enter the correct answer below:</h2>
         <div class="controls-area">
-            <button data-type="addition" class="btn-m btn--big-m btn--green-m">
+            <button data-type="addition" class="btn-m btn--big-m btn--green-m" aria-label="Addition">
                 <i class="fas fa-plus"></i>
             </button>
-            <button data-type="subtract" class="btn-m btn--big-m btn--blue-m">
+            <button data-type="subtract" class="btn-m btn--big-m btn--blue-m" aria-label="Subtract">
                 <i class="fas fa-minus"></i>
             </button>
-            <button data-type="multiply" class="btn-m btn--big-m btn--orange-m">
+            <button data-type="multiply" class="btn-m btn--big-m btn--orange-m" aria-label="Multiply">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -43,7 +43,7 @@
             <span id="operator">x</span>
             <span id="operand2">0</span>
             <span>=</span>
-            <p class="math-answer-message">Enter Answer:</p>
+            <label for="math-answer-box">Answer:</label>
             <input id="math-answer-box" type="number">
         </div>
         <button data-type="submit" class="btn-m btn--gray-m">Submit Answer</button>

@@ -323,7 +323,7 @@ a:hover {
     font-weight: bold;
 }
 
-.math-answer-message {
+.math-answer-box label {
     display: none;
     font-size: 1rem;
 }
@@ -571,8 +571,15 @@ input[type="submit"]:hover {
         font-size: 1.2rem;
     }
 
-    .math-answer-message {
-        font-size: 1.2rem;
+    .math-question-area label,
+    .math-question-area input {
+        align-items: center;
+
+    }
+
+    .math-question-area label {
+        font-size: 1rem;
+        margin: center;
     }
 
     .math-question-area input {
