@@ -82,12 +82,6 @@ To run the Brain Teaser Games app locally for development and testing purposes, 
 
 ## Testing the App
 
-To run the automated tests for the Brain Teaser Games app, use the following command:
-
- ```bash
- npm test
- ```
-
 This will execute the test suite and provide feedback on the app's functionality.
 
 ## Troubleshooting

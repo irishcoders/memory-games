@@ -95,6 +95,7 @@ a:hover {
 .register {
     text-align: center;
     font-weight: bold;
+    margin-left: 15px;
 }
 
 /* style for register anchor */
@@ -497,7 +498,6 @@ input[type="submit"]:hover {
 @media screen and (max-width: 830px) {
 
     .game-list-area,
-    .math-game-area,
     .flag-game-area,
     .register {
         width: 90%;
@@ -509,15 +509,13 @@ input[type="submit"]:hover {
     }
 
     .game-area,
-    .math-game-area,
     .flag-game-area,
     .register {
         padding: 5px;
     }
 
-    .game-area h2,
-    .math-question-area h2 {
-        font-size: 2rem;
+    .game-area h2 {
+        font-size: 1.2rem;
     }
 
     .question-area {
@@ -529,15 +527,12 @@ input[type="submit"]:hover {
     }
 
     .question-area input,
-    .question-area button,
-    .math-question-area input,
-    .math-question-area button {
+    .question-area button {
         width: 70%;
         font-size: 1rem;
     }
 
-    .score-area,
-    .math-score-area {
+    .score-area {
         font-size: 1rem;
     }
 
@@ -545,29 +540,93 @@ input[type="submit"]:hover {
         padding: 10px;
     }
 
-    .m-btn--big {
-        width: 70px;
-        height: 70px;
-        font-size: 2.8rem;
-        margin: 0 15px;
+    /* math game media query */
+
+    .math-game-area {
+        min-height: 100vh;
     }
 
-    .m-btn--big::after {
-        font-size: 0.8rem;
+    .btn--big-m {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+            .btn-m {
+                    width: 150px;
+                    height: 100px;
+                    font-size: 1.2rem;
     }
 
-    .m-btn {
-        width: 150px;
-        height: 40px;
+    .btn--big-m::after {
         font-size: 1rem;
     }
 
-    .m-btn--gray {
+    .math-question-area span {
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    .math-score-area {
+        font-size: 1rem;
+    }
+
+    .math-scores {
+        padding: 5px;
+    }
+
+    .math-scores span {
+        margin-left: 10px;
+    }
+
+    .error-message {
+        margin-top: 10px;
+    }
+
+
+
+    /*
+    .math-game-area {
+        min-height: 100vh;
+    }
+
+    .btn--big-m {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+    }
+
+    .btn--big-m::after {
+        font-size: 1rem;
+    }
+
+    .btn-m {
+        width: 150px;
+        height: 100px;
+        font-size: 1.2rem;
+    }
+
+    .btn--gray-m {
         margin-top: 0;
         width: 120px;
         height: 40px;
         font-size: 0.9rem;
     }
+
+    .math-question-area span {
+        display: inline-block;
+        padding: 3px;
+        margin-bottom: 40px;
+    }
+
+    .math-score-area {
+        font-size: 20px;
+        margin-top: 250px;
+    }
+
+    .math-scores {
+        padding: 3px;
+    }
+    */
+    /* Forms and registration */
 
     .reg-header {
         height: 20vh;
