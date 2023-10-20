@@ -64,13 +64,13 @@ The "Math Game" is an exciting and interactive way to sharpen your arithmetic sk
 
 The game has a register/signup page where users can sign up to receive game updates and activities. The register page has been made very simple and straight-forward so that users can fill up their details in very little time.
 
-## Game Upcoming Update
+## Upcoming Update for Flag Game
 
 - We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
 
-- We are also working on setting difficulty level to the maths game and setting a total number of questions and a pass mark for users who play the game
-  
-- We are also working on improving math game accessibility across all devices and this will be fixed in the next update
+## Upcoming Update for Math Game
+
+- We are also working on setting difficulty level to the maths game so that users can choose difficulty levels between beginner, intermediate and professional Math levels.
 
 ## Future Upcoming Games
 
@@ -80,7 +80,7 @@ In the future, we plan to expand the Brain Teaser Games app by adding more excit
 - Word Meaning: Guess the meaning of various words and learn new vocabulary.
 - Guess the Brand Name: Identify famous brands based on their logos or descriptions.
 - Fill in the Gap: Complete sentences by filling in the missing words.
-- And more..
+- And lots more..
   
 ## Usage
 

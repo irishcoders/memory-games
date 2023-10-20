@@ -1,10 +1,4 @@
-let score = 0;
-let totalQuestions = 0;
-let currentGameType = "addition";
-
-/* Wait for the DOM to finish loading before running the game
- * Get the button elements and add event listeners to them
-*/
+/* Wait for the DOM to finish loading before running the game */
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -19,83 +13,77 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /** this adds a listener to the Enter key on the keyboard so that our answers can log when user presses Enter on keyboard
-     *This means the user don't always have to us the submit button to enter their answer */
+    // This adds a listener to the Enter key on the keyboard so that answers can be submitted when the Enter key is pressed
     document.getElementById("math-answer-box").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
-
     });
 
     runGame("addition");
 
 });
 
-// this function will update the score and check for game completion
-function updateScoreAndCheckCompletion() {
-    totalQuestions++;
-    if (score >= 20 && totalQuestions === 25) {
-        alert(`Congratulations! You passed. You scored ${score} out of 25!\nWould you like to restart the game or quit?`);
-    } else if (totalQuestions === 25) {
-        alert(`Sorry, you failed. You scored ${score} out of 25.\nWould you like to restart the game or quit?`);
-    }
-}
+let totalQuestions = 25; // Set the total number of questions
 
-// this function will reset the game
-function resetGame() {
-    score = 0;
-    totalQuestions = 0;
-    runGame(currentGameType);
-}
+let correctAnswers = 0; // Initialize the correct answers counter
+
 /**
  * The main game "loop" will be called when the script is first loaded
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
-    currentGameType = gameType; // Update the current game type
-
-    // This sets the answer box to empty after each game is played and recorded
-    document.getElementById("math-answer-box").value = "";
-
-    //this lets the cursor stay in the answer-box rather than the user clicking in it to type answer
-    document.getElementById("math-answer-box").focus();
-
-    //This creates a random number between 1 and 25
-    let num1 = Math.floor(Math.random() * 25) + 1;
-    let num2 = Math.floor(Math.random() * 25) + 1;
-
-    if (gameType === "addition") {
-        displayAdditionQuestion(num1, num2);
-    } else if (gameType === "subtract") {
-        displaySubtractQuestion(num1, num2);
-    } else if (gameType === "multiply") {
-        displayMultiplyQuestion(num1, num2);
-    } else {
-        alert(`Unknown game type: ${gameType}`);
-        throw `Unknown game type: ${gameType}. Abborting!`;
-    }
-        if (gameType !== currentGameType) {
-        const confirmChange = confirm("Changing operation type will clear your current progress. Are you sure you want to continue?");
-        if (confirmChange) {
-            score = 0; // Reset the score
-            totalQuestions = 0; // Reset the total questions
+    if (correctAnswers >= totalQuestions) {
+        // Check if the user has answered all questions
+        const userScore = correctAnswers + " out of " + totalQuestions;
+        if (correctAnswers >= 20) {
+            alert`Congratulations! You passed. You scored ${correctAnswers} out of ${totalQuestions}`;
         } else {
-            // Continue with the current game type
-            return;
+            alert("Sorry, you failed. You scored " + userScore);
+        }
+        const restart = confirm("Would you like to restart the game or quit?");
+        if (restart) {
+            correctAnswers = 0; // Reset the correct answers counter
+            document.getElementById("math-score").innerText = correctAnswers;
+            document.getElementById("math-incorrect").innerText = 0; // Reset incorrect answers counter
+        } else {
+            const quitMessage = "You have chosen to quit the game. Goodbye!";
+            alert(quitMessage);
+            // Redirect the user to another page (example: go to the homepage)
+            window.location.href = "index.html#home"; // Replace "index.html" with the URL you want to redirect to
+        }
+    } else {
+        // This sets the answer box to empty after each game is played and recorded
+        document.getElementById("math-answer-box").value = "";
+
+        // This lets the cursor stay in the answer box rather than the user clicking in it to type an answer
+        document.getElementById("math-answer-box").focus();
+
+        // This creates random numbers between 1 and 25
+        let num1 = Math.floor(Math.random() * 25) + 1;
+        let num2 = Math.floor(Math.random() * 25) + 1;
+
+        if (gameType === "addition") {
+            displayAdditionQuestion(num1, num2);
+        } else if (gameType === "subtract") {
+            displaySubtractQuestion(num1, num2);
+        } else if (gameType === "multiply") {
+            displayMultiplyQuestion(num1, num2);
+        } else {
+            alert(`Unknown game type: ${gameType}`);
+            throw `Unknown game type: ${gameType}. Aborting!`;
         }
     }
 }
 
 /**
- * checks the answer against the first element in the calculateCorrectAnswer()
- * array
- * Also checks if user submits without an input and displays an error message
+ * Checks the answer against the correct answer
+ * Also checks if the user submits without an input and displays an error message
  */
 function checkAnswer() {
     let userAnswer = document.getElementById("math-answer-box").value.trim(); // Trim the input
     if (userAnswer === "") {
-        alert("Invalid input. Please enter your answer first, then press the Enter key or click Submit Answer to continue."); // msg for no input error
+        alert("Invalid input. Please enter your answer first, then press the Enter key or click Submit Answer to continue.");
     } else {
         let parsedAnswer = parseInt(userAnswer);
         let calculatedAnswer = calculateCorrectAnswer();
@@ -106,13 +94,13 @@ function checkAnswer() {
             alert(`Aww.. Your answer was wrong, your answer was ${parsedAnswer}, but the correct answer is ${calculatedAnswer[0]}!`);
             incrementWrongAnswer();
         }
+        correctAnswers++;
         runGame(calculatedAnswer[1]);
     }
 }
 
-
 /**
- * Gets the operands (the random numbers) and operator (addition, divide etc)
+ * Gets the operands (the random numbers) and operator (addition, subtraction, multiplication)
  * directly from the DOM and returns the correct answer
  */
 function calculateCorrectAnswer() {
@@ -128,51 +116,40 @@ function calculateCorrectAnswer() {
         return [operand1 * operand2, "multiply"];
     } else {
         alert(`Unimplemented operator ${operator} `);
-        throw `Unimplemented operator ${operator}. Abborting!..`;
+        throw `Unimplemented operator ${operator}. Aborting!`;
     }
-
-
 }
 
 /** 
- * Gets code from the DOM and increments it by 1, then displays it in the score box
+ * Gets the score from the DOM and increments it by 1, then displays it in the score box
  */
 function incrementScore() {
-    score++;
-    document.getElementById('math-score').innerText = score;
-    updateScoreAndCheckCompletion();
+    let oldScore = parseInt(document.getElementById('math-score').innerText);
+    document.getElementById('math-score').innerText = ++oldScore;
 }
 
 /** 
- * Gets code from the DOM and increments it by 1, then displays it in the incorrect box
+ * Gets the incorrect score from the DOM and increments it by 1, then displays it in the incorrect box
  */
 function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById('math-incorrect').innerText);
     document.getElementById('math-incorrect').innerText = ++oldScore;
-    updateScoreAndCheckCompletion();
 }
 
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "+";
-
 }
 
 function displaySubtractQuestion(operand1, operand2) {
-    /** we use ternary operation here to call an if statement on the subtract function 
-     * so that if the first number is greater than the second number, 
-     * the ternary function will automatically put the bigger number in front before the subtraction takes place
-     * this is to avoid getting a negative (minus) result
-     * */
     document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = "-";
-
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "*";
-
 }
