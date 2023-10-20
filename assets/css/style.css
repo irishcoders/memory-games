@@ -342,6 +342,10 @@ a:hover {
     padding: 25px;
 }
 
+.total-math-questions {
+    text-align: center;
+}
+
 /* ----Mathgame Buttons--- */
 
 .btn-m {
@@ -607,9 +611,15 @@ input[type="submit"]:hover {
         margin-top: 5px;
     }
 
+    /*
     .math-scores span {
         display: inline-block;
         padding: 3px;
+    }
+    */
+
+    .total-math-questions {
+        text-align: center;
     }
 
     /* Forms and registration */
