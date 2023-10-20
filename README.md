@@ -2,6 +2,22 @@
 
 ![BT logo](assets/images/btlogo.png)
 
+**Table of Contents**
+
+- [Introduction](introduction)
+- [Features](#features)
+- [Game Updates](#game-updates)
+- [Future Games](#future-games)
+- [Usage](#usage)
+- [Testing the App](#testing-the-app)
+- [Troubleshooting](#troubleshooting)
+- [Future Development](#future-development)
+- [Credits](#credits)
+- [Contributing](#contributing)
+- [Licensing](#licensing)
+
+# Introduction
+
 Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app has gone through testing and debugging stages.
 
 ![BT Game pages](assets/images/btgamepage.png)
@@ -12,18 +28,35 @@ Brain Teaser Games is a web-based application designed for users of all ages to 
 
 ![BT FlagGame page](assets/images/flaggame.png)
 
+The "Flag Game" is an engaging and educational game designed to challenge your knowledge of country flags from around the world. Whether you're a geography enthusiast or just looking to learn something new, this game offers an enjoyable way to test your flag recognition skills.
+
+### How it works
+
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
-- At the end of the quiz, the user will receive their score, and the app will provide feedback on their performance.
-- Also at the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like another try.
+- On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question. 
+- At the end of the quiz, the user will be scored and the app will provide feedback on user performance     based on how many questions the user got right or wrong.
+- If the user scores 20 or more, the game reports a Pass.
+- If user scores below 20, the game reports a Fail.
+- The is a Restart Game option for users to start all over at any point in the game
+- There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
+- At the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like play again.
 
-## Basic Calculation
+## Math Game
 
 ![BT MathGame pages](assets/images/mathgame.png)
 
-- Basic Calculation is a math-based game that quizzes users on four different data types: addition, subtraction, multiplication, and division.
-- Players can select the specific math operation they want to play.
-- The game is designed to help users improve their math skills while having fun.
+The "Math Game" is an exciting and interactive way to sharpen your arithmetic skills. This game challenges you with a series of math problems, including addition, subtraction, and multiplication. Whether you're a math enthusiast or looking to enhance your mathematical abilities, this game offers a fun way to practice your skills.
+
+### How it works
+
+- In this game, you have the freedom to choose the specific math operation you want to play, including addition, subtraction, and multiplication. Challenge yourself with increasingly complex problems as you progress.
+- User objective is to solve the math problems as quickly and accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
+- The Math Game has 3 operand types, namely; Addition, Subtraction and Multiplication. 
+- User has a total of 25 questions for each operand type they choose to play and the game reports the result after each 25 questions. 
+- If user scores 20 out of 25 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
+- If user scores below 20, the game instructs the user they failed and also ask if they would like to restart the game or quit the game. 
+- The game is designed to help users improve user's math skills while having fun.
   
 ## Registration
 
@@ -132,7 +165,7 @@ The app `html` and `ccs` code has been tested using The W3C Mark Up Validator (<
 
 ### Unfixed Bugs
 
-- The Math Game media query needs resizing on smaller device. Still in the process of resolving and will be fixed in the next game update. 
+- The Math Game media query needs resizing on smaller device. Still in the process of resolving and will be fixed in the next game update.
 - LightHouse reports 68% for Math Game accesibility and this will be fixed in the next game update.
 
 ## Future Development

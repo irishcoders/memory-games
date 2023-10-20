@@ -1,3 +1,7 @@
+let score = 0;
+let totalQuestions = 0;
+let currentGameType = "addition";
+
 /* Wait for the DOM to finish loading before running the game
  * Get the button elements and add event listeners to them
 */
@@ -28,12 +32,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// this function will update the score and check for game completion
+function updateScoreAndCheckCompletion() {
+    totalQuestions++;
+    if (score >= 20 && totalQuestions === 25) {
+        alert(`Congratulations! You passed. You scored ${score} out of 25!\nWould you like to restart the game or quit?`);
+    } else if (totalQuestions === 25) {
+        alert(`Sorry, you failed. You scored ${score} out of 25.\nWould you like to restart the game or quit?`);
+    }
+}
 
+// this function will reset the game
+function resetGame() {
+    score = 0;
+    totalQuestions = 0;
+    runGame(currentGameType);
+}
 /**
  * The main game "loop" will be called when the script is first loaded
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
+    currentGameType = gameType; // Update the current game type
+
     // This sets the answer box to empty after each game is played and recorded
     document.getElementById("math-answer-box").value = "";
 
@@ -52,7 +73,17 @@ function runGame(gameType) {
         displayMultiplyQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
-        throw `Unknow game type: ${gameType}. Abborting!`;
+        throw `Unknown game type: ${gameType}. Abborting!`;
+    }
+        if (gameType !== currentGameType) {
+        const confirmChange = confirm("Changing operation type will clear your current progress. Are you sure you want to continue?");
+        if (confirmChange) {
+            score = 0; // Reset the score
+            totalQuestions = 0; // Reset the total questions
+        } else {
+            // Continue with the current game type
+            return;
+        }
     }
 }
 
@@ -107,18 +138,17 @@ function calculateCorrectAnswer() {
  * Gets code from the DOM and increments it by 1, then displays it in the score box
  */
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById('math-score').innerText);
-    document.getElementById('math-score').innerText = ++oldScore;
-
+    score++;
+    document.getElementById('math-score').innerText = score;
+    updateScoreAndCheckCompletion();
 }
 
 /** 
  * Gets code from the DOM and increments it by 1, then displays it in the incorrect box
  */
 function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById('math-incorrect').innerText);
     document.getElementById('math-incorrect').innerText = ++oldScore;
-
+    updateScoreAndCheckCompletion();
 }
 
 function displayAdditionQuestion(operand1, operand2) {
