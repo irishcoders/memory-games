@@ -122,6 +122,7 @@ In the near future, the Brain Teaser Games app will be adding more exciting game
 
 ## Technologies and Languages Used
 
+- [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template) was used to develop this app
 - [Codeanywhere](app.codeanywhere.com) was used as the IDE in the development of this app
 - [JavaScript Tutor](https://pythontutor.com/javascript.html#mode=edit) was used to test out the codes on each stages during the development of this app.
 - [HTML](https://www.w3schools.com/html/) is the programming language used in writing the structures for several part of the game including the Main homepage, the Flag Game home page, Math Game Home page and the registration page.
@@ -130,6 +131,10 @@ In the near future, the Brain Teaser Games app will be adding more exciting game
 - [Git](https://git-scm.com/) was used to commit and push code during the developement of the App.
 - [GitHub](www.github.com) has been used to store the code, images, and other contents and most importantly has been used to deploy the App to the web
 - [Pexels](www.pexels.com) was used to gather the images used for the flag game.
+- [Unspash](www.unsplash.com) was also used to gather some flag images used for this game.
+- [Favicon](www.favicon.ico) was used to design the Game app logo
+- [Font Awesome](www.fontawesome.com) was used to design the math game operators.
+- [Google Fonts](https://fonts.google.com/) was used to select font used in developing this app.
 
 ## Testing and Debugging during development
 
@@ -310,6 +315,7 @@ I would like to extend gratitude and give credit to the following resources that
 1. **Daisy McGirr**, my mentor for providing guidance and suggesting use of concepts in working through some critical parts of the app and media query.
 
 2. [Code Institute's](www.codeinstitute.com) Love Math project, which served as the inspiration for the math game in this app.
+
 3. [Pexels](https://pexels.com) for providing the images used in the project.
 
 4. [Adam Khoury Javascript Youtube tutorial](https://youtu.be/tLxBwSL3lPQ) for explaining how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
@@ -325,6 +331,14 @@ I would like to extend gratitude and give credit to the following resources that
 9. [Mark Down](https://www.markdownguide.org/cheat-sheet/) for guidance in writing certain Readme structures
 
 10. [Techsini](https://techsini.com/multi-mockup/index.php) for MockUp images
+
+11. [Favicon](www.favicon.ico) was used to design the Game app logo
+
+12. [Font Awesome](www.fontawesome.com) was used to design the math game operators.
+
+13. [Google Fonts](https://fonts.google.com/) was used to select font used in developing this app.
+
+14. [Code Institute Full Stack Software Development program](www.codeinstitue.com) for the opportunity to learn all the aforementioned technologies used in creating this project.
 
 ## Contributing
 
