@@ -105,6 +105,7 @@ The app registration page includes the features below;
 - email address: User are required to enter their email address where they want to receive future notifications about the game
 - Email Frequency: Here users are required to select how often they would like to be contacted about the game within a number of option ranging from daily, weekly, forthnightly and monthly
 - Feedback form: Although not mandatory, users have the option to enter their feedback about how the game app can be improved
+- The Registration page also has a **Quit Registration** option on top of the page for cases where users do not want to continue with registration.
 
 ### Registration Error Handling
 
@@ -148,9 +149,78 @@ Throughout the development of this app, different sections of codes were written
 
 ### Flag Game Testing
 
+- **Unit Testing:** Individual functions, such as `shuffleArray`, `validateAns`, and score-related functions, were tested independently to ensure they perform as expected.
+- **Web browser preview:** Throught out the development stage, the following code `python3 -m http.server` was used to deploy the project to an external web browser for easy preview of the stages of the app development.
+- **Image Preloading:** Images were preloaded in the background(browser console) to prevent delays during gameplay. This ensured that all images loaded correctly before the game started.
+- **Input Validation:** The game checks user input for validity. If the user enters invalid characters or leaves the answer box empty, an error message is displayed, and the game doesn't proceed until valid input is provided.
+- **Gameplay Testing:** The game underwent extensive testing to confirm that it progresses through questions, calculates scores, and displays messages correctly. The correctness of the answers was verified.
+- **Score Calculation:** Score calculations were tested to verify that the correct and incorrect scores update accurately for each user responses.
+- **Game End Conditions:** The game was tested to determine the conditions under which it would end, and the appropriate messages are displayed based on the user's performance.
+- **UI/UX Testing:** The user interface and user experience were tested to ensure that the game is visually appealing and easy to understand. Emphasis was placed on making sure the flag images displayed correctly.
+- **Flag Randomization:** The game's randomization of questions from the images displayed was verified to confirm that each game session presents questions in a different order.
+- **Restart Game:** After the game ends, a confirmation alert is displayed to allow the user to restart the game. This feature was tested to ensure it resets the game correctly.
+- **LightHouse Testing:** The game was tested with LightHouse and below is the result;
+  ![Flag Game LightHouse Performance report](assets/images/flaggame_lhreport.png)
+
 ### Math Game Testing
 
-## Usage
+During the development of the Math Game, thorough testing and debugging were crucial to ensure that the game worked as intended and provided an excellent user experience. Below is a list of the key testing stages:
+
+- **Math Problem Generation:** I extensively tested the math problem generation to make sure it correctly created addition, subtraction, and multiplication questions within the specified number range i.e 1 - 25.
+- **Answer Validation:** process was tested to ensure it accurately evaluated user input and compared it to the correct answer.
+- **Score Tracking:** I confirmed that the user's score was accurately calculated and displayed. Both the correct and incorrect scores were tested to ensure they updated as expected.
+- **Game Flow:** the entire game flow was tested, making sure questions appeared one after another and that the game ended when all questions were answered. Also ensured a restart or cancel message was displayed after each game round ends.
+- **Mobile Responsiveness:** As mobile device usage is common, The math game was tested to make sure that the game was responsive and performed well on both desktop and mobile devices.
+- **User Interface:** Very close attention was given to the game's visual presentation. The fonts, colors, and alignment to ensure a visually pleasing and user-friendly design was very important and it was ensured.
+- **LightHouse Testing:** The Math game was also tested for performance using LightHouse and below is the result:
+  ![Math Game LightHouse performance result](assets/images/mathgame_lhreport.png)
+
+### Debugging During Development
+
+Debugging during the development of the App was very important to eliminate issues and ensure smooth gameplay for users. Common debugging techniques included:
+
+- **Console Logs:** Extensive use of `console.log` statements was employed to trace variable values, function execution, and detect any errors in the code.
+- **Error Handling:** Error handling, such as displaying error messages for invalid user input, was used to provide informative feedback to users.
+- **Event Listeners:** Event listeners for button clicks and the "Enter" key presses were tested to ensure they triggered the intended actions and functions.
+- **Performance Optimization:** Debugging focused on optimizing game performance, such as reducing input problems, ensuring fast image loading, and minimizing code errors.
+
+**Conclusion**
+The App was developed with an emphasis on testing and debugging to deliver a reliable and enjoyable user experience.
+
+### Interesting Issues Found
+
+- **_Flag Game:_** When I implemented the space/no-input function Error handling for the Flag Game, I discovered that it affected one of the answers specifically the "south africa" flag answer. The code below;
+
+```Javascript
+else if (answer.trim() === "") {
+        error.innerHTML = "Invalid Input. Please enter an answer.";
+        return false;
+```
+
+- I couldn't find another solution to handle this situation without causing more bugs or error in the overall code so I had to remove this particular question and replaced it with an answer that doesn't require a space.
+
+**_Math Game:_** When I implented the function to set a timer for the display message and restart button for the game, a particular bug keeps making the "Incorrect Answer" section record old incorrect result into new game sessions after user confirms they want to restart game. I had to implement another method by resetting the old incorrect score variable as below;
+
+```javascript
+    setTimeout(function () {
+            const restart = confirm("Choose 'OK' to Restart or 'Cancel' to Quit Game");
+            messageElement.textContent = ""; // Clear the display message immediately
+
+            if (restart) {
+                currentQuestion = 0;
+                correctAnswers = 0; // Reset the correct score
+                incorrectAnswers = initialIncorrectAnswers; // Reset the incorrect score to the initial value
+                mathScoreElement.innerText = 0;
+                mathIncorrectElement.innerText = initialIncorrectAnswers; // Update the incorrect score display
+                totalQuestionsElement.innerText = totalQuestions;
+                runGame();
+```
+
+## Deployment
+
+### Version Control
+
+Git was used as the version control software. Commands such as git add ., git status, git commit and git push were used to add, save, stage and push the code to the GitHub repository where the source code is stored.
 
 ### Running the App Locally
 
@@ -162,7 +232,9 @@ To run the Brain Teaser Games app locally for development and testing purposes, 
     git clone <https://github.com/irishcoders/memory-games.git>
    ```
 
-   Alternatively, you can download the ZIP file and extract it to your local machine.
+````
+
+Alternatively, you can download the ZIP file and extract it to your local machine.
 
 2. Navigate to the project directory:
 
@@ -262,3 +334,4 @@ However, we appreciate your interest in the project, and if you have any suggest
 ## Licensing
 
 This project is the second project in my Full Stack Web Development program and this app is developed to be submitted as my javascript project at (CodeInstitute.com)
+````
