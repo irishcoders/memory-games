@@ -20,31 +20,33 @@
 
 Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app has gone through testing and debugging stages.
 
-![BT Game pages](assets/images/btgamepage.png)
+![BT Game pages](assets/images/btgame_homepage.png)
 
 # Features
 
 ## Flag Quiz
 
-![BT FlagGame page](assets/images/flaggame.png)
-
 The "Flag Game" is an engaging and educational game designed to challenge your knowledge of country flags from around the world. Whether you're a geography enthusiast or just looking to learn something new, this game offers an enjoyable way to test your flag recognition skills.
+
+![BT FlagGame page](assets/images/flaggame_homepage.png)
 
 ### How it works
 
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
+- On every correct answer provided, the game automatically provides feedback to the user to say **"Brilliant! you got the correct answer"**
+  ![Flag Game pass](assets/images/flaggame_pass.png)
 - On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question.
-  ![]()
+  ![Flag Game Fail](assets/images/flaggame_fail.png)
 - At the end of the quiz, the user will be scored and the app will provide feedback on user performance based on how many questions the user answered right or wrong.
 - If the user scores 20 or more, the game reports a Pass.
-  ![]()
+  ![Flag Game pass feedback](assets/images/flaggame_passfeedback.png)
 - If user scores below 20, the game reports a Fail.
-  ![]()
+  ![Flag Game fail feedback](assets/images/flaggame_failfeedback.png)
 - There is a Restart Game option for users to start all over at any point in the game
 - There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
 - At the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like play again.
-  ![]()
+  ![Flag Game Restart](assets/images/flaggame_restart.png)
 
 ### Flag Game Error Handling
 
@@ -57,26 +59,26 @@ The "Flag Game" is an engaging and educational game designed to challenge your k
 
 ## Math Game
 
-![BT MathGame pages](assets/images/mathgame.png)
-
 The "Math Game" is an exciting and interactive way to sharpen your arithmetic skills. This game challenges you with a series of math problems, including addition, subtraction, and multiplication. Whether you're a math enthusiast or looking to enhance your mathematical abilities, this game offers a fun way to practice your skills.
+![BT MathGame pages](assets/images/mathgame_homepage.png)
 
 ### How it works
 
 - This game offers 10 questions on each round and shuffles questions between different math operators namely Addition, Subtraction and Multiplication. Challenge yourself with increasingly complex problems as you progress.
 - User objective is to solve the math problems as accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
-- The game provides feedback on every question answered. If user answers a question correctly, the game informs the user the correct answer has been supplied and if the user gets a question wrong, the game provides feedback with the correct answer.
-  ![]()
-
+- The game provides feedback on every question answered. If user answers a question correctly, the game informs the user the correct answer has been supplied.
+  ![Math Game Pass feedback](assets/images/mathgame_passfeedback.png)
+- if the user gets a question wrong, the game provides feedback with the correct answer.
+  ![Math Game Fail Feedback](assets/images/mathgame_failfeedback.png)
 - If user scores 6 out of 10 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
-  ![]()
+  ![Math Game Pass](assets/images/mathgame_pass.png)
 - If user scores below 6, the game instructs the user they failed and also ask if they would like to restart the game or quit the game.
-  ![]()
+  ![Math Game Fail](assets/images/mathgame_fail.png)
 - There is a Restart Game option for users to start all over at any point in the game
 - There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
 - At the end of the Math Game, A **Choose OK to Restart Game or Cancel to Quit** message is displayed on the screen to ask users if they would like play again.
-  ![]()
-- The game is designed to help users improve user's math skills while having fun.
+  ![Math Game EOG Restart](assets/images/mathgame_restart.png)
+- This game is designed to help users improve user's math skills while having fun.
 
 ### Math Game Error Handling
 
