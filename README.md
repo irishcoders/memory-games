@@ -222,6 +222,13 @@ else if (answer.trim() === "") {
 
 Git was used as the version control software. Commands such as git add ., git status, git commit and git push were used to add, save, stage and push the code to the GitHub repository where the source code is stored.
 
+### Deployment Process
+
+1. Set Up a GitHub Repository using [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template)
+2. Name your Repository
+3. Copy the Repository link and go to [CodeAnywhere](app.codeanywhere.com)
+4. Create a new Workspace in CodeAnywhere and paste your Repository link to set up your IDE
+
 ### Running the App Locally
 
 To run the Brain Teaser Games app locally for development and testing purposes, follow these steps:
@@ -241,18 +248,6 @@ Alternatively, you can download the ZIP file and extract it to your local machin
    ```bash
     cd memory-games
    ```
-
-3. Install dependencies:
-   `npm install`
-
-4. Start the development server:
-
-   ```sql
-   npm start
-   ```
-
-5. Once the server is running, open your web browser, and visit `http://localhost:3000` to access the app.
-
 ## Testing the App
 
 This will execute the test suite and provide feedback on the app's functionality.
