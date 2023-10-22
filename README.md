@@ -127,7 +127,7 @@ In the near future, the Brain Teaser Games app will be adding more exciting game
 - [JavaScript Tutor](https://pythontutor.com/javascript.html#mode=edit) was used to test out the codes on each stages during the development of this app.
 - [HTML](https://www.w3schools.com/html/) is the programming language used in writing the structures for several part of the game including the Main homepage, the Flag Game home page, Math Game Home page and the registration page.
 - [CSS](https://www.w3schools.com/css/) is the programming language used in the styling of the game app to make it visually appealing in all areas of the app.
-- [Javascript](https://www.javascript.com/) is the main programming language used to add interactivity and automation the the Flag Game and the Math Game app
+- [Javascript](https://www.javascript.com/) is the main programming language used to add interactivity and automation to the Flag Game and the Math Game app
 - [Git](https://git-scm.com/) was used to commit and push code during the developement of the App.
 - [GitHub](www.github.com) has been used to store the code, images, and other contents and most importantly has been used to deploy the App to the web
 - [Pexels](www.pexels.com) was used to gather the images used for the flag game.
