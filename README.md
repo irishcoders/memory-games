@@ -18,7 +18,7 @@
 
 # Introduction
 
-Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app has gone through testing and debugging stages.
+Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app also features a registration page aimed at getting user's feedback and also to enable seamless notifications of game updates to registered users. This app has gone through testing and debugging stages and it is connstantly being tested to ensure smooth user experience.
 
 ![BT Game pages](assets/images/btgame_homepage.png)
 
@@ -38,13 +38,14 @@ The "Flag Game" is an engaging and educational game designed to challenge your k
   ![Flag Game pass](assets/images/flaggame_pass.png)
 - On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question.
   ![Flag Game Fail](assets/images/flaggame_fail.png)
-- At the end of the quiz, the user will be scored and the app will provide feedback on user performance based on how many questions the user answered right or wrong.
+
+- At the end of the quiz, the user will be scored and the app will provide feedback on user's performance based on how many questions the user answered right or wrong.
 - If the user scores 20 or more, the game reports a Pass.
   ![Flag Game pass feedback](assets/images/flaggame_passfeedback.png)
 - If user scores below 20, the game reports a Fail.
   ![Flag Game fail feedback](assets/images/flaggame_failfeedback.png)
-- There is a Restart Game option for users to start all over at any point in the game
-- There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
+- There is a "Restart Game" option for users to start all over at any point in the game
+- There is also a "Quit Game" option for users to quit and return to the Games Homepage at any point in the game.
 - At the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like play again.
   ![Flag Game Restart](assets/images/flaggame_restart.png)
 
@@ -53,8 +54,8 @@ The "Flag Game" is an engaging and educational game designed to challenge your k
 - The flag game displays a message that disappears after a 2 second period for each time the user enters an answer
 - The message displayed informs the user if their answer was right or wrong
 - If user answer is correct, it says **"congrats you got the answer"**
-- If user answer is wrong, it says sorry your answer was wrong, then it displays the correct answer
-- If user enters an integer or any other character type rather than an alphabetical answer, the game informs the user to enter an alphabetical answer
+- If user answer is wrong, it says "sorry your answer was wrong", then it displays the correct answer
+- If user enters an integer or any other character type rather than an alphabetical answer, the game informs the user to enter an alphabetical answer.
 - If user enters a space bar or no answer at all, the game informs the user to enter a valid answer
 
 ## Math Game
@@ -64,13 +65,13 @@ The "Math Game" is an exciting and interactive way to sharpen your arithmetic sk
 
 ### How it works
 
-- This game offers 10 questions on each round and shuffles questions between different math operators namely Addition, Subtraction and Multiplication. Challenge yourself with increasingly complex problems as you progress.
+- This game offers 10 questions on each round and shuffles questions between different math operators specifically; Addition, Subtraction and Multiplication. Challenge yourself with increasingly complex problems as you progress.
 - User objective is to solve the math problems as accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
 - The game provides feedback on every question answered. If user answers a question correctly, the game informs the user the correct answer has been supplied.
   ![Math Game Pass feedback](assets/images/mathgame_passfeedback.png)
 - if the user gets a question wrong, the game provides feedback with the correct answer.
   ![Math Game Fail Feedback](assets/images/mathgame_failfeedback.png)
-- If user scores 6 out of 10 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
+- If user scores 6 or more out of 10 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
   ![Math Game Pass](assets/images/mathgame_pass.png)
 - If user scores below 6, the game instructs the user they failed and also ask if they would like to restart the game or quit the game.
   ![Math Game Fail](assets/images/mathgame_fail.png)
@@ -90,29 +91,64 @@ The "Math Game" is an exciting and interactive way to sharpen your arithmetic sk
 - The game however allows a user to enter a minus or a dot with an integer e.g -10 or .10 and then provides feedback if the user answer is correct or incorrect.
 - The game prevents the user from manually selecting an operand type and all questions are automatically randomly generated with random operand types.
 
-## Registration
+## App Registration Page
 
 ![BT Register page](assets/images/registerpage.png)
 
-The game has a register/signup page where users can sign up to receive game updates and activities. The register page has been made very simple and straight-forward so that users can fill up their details in very little time.
+The game app also features a register/signup page where users can sign up to receive game updates and be informed quickly about new activities. The register page has been made very simple and straight-forward so that users can fill up their details in very little time. The registration page also features a feedback form where users can enter a feedback about the game.
+
+## Registration page and Registration Error handling
+
+The app registration page includes the features below;
+
+- Full name: User will be required to enter their full name in this box,
+- email address: User are required to enter their email address where they want to receive future notifications about the game
+- Email Frequency: Here users are required to select how often they would like to be contacted about the game within a number of option ranging from daily, weekly, forthnightly and monthly
+- Feedback form: Although not mandatory, users have the option to enter their feedback about how the game app can be improved
+
+### Registration Error Handling
+
+The game has been tested so that users cannot leave a required field blank and users will not be able to proceed with registration unless all required fields have been supplied with the expected details.
 
 ## Upcoming Update for Flag Game
 
-- We are working on updating the flag game to include a 4 option answers a user can select from rather than typing out the quiz answer by themselves. We hope that users can get a more enjoyable experience while interacting with the game app once this update has been released.
+- Work is in progress to update the flag game to include a 4 option answers whereby a user can select the correct answer from a list of options rather than typing out the answer themselves. This will give users a more enjoyable experience while interacting with the game app once this update has been released.
 
 ## Upcoming Update for Math Game
 
-- We are also working on setting difficulty level to the maths game so that users can choose difficulty levels between beginner, intermediate and professional Math levels.
+- Work is in progress to update the Math game to introduce different difficulty level to the maths game so that users can choose between a preferred range of difficulty level including; beginner, intermediate and professional Math levels.
+- Other updates such as more mobile device compatibilities are also in progress.
+- In the next update for Math Game, users will be able to manually select the operands (Addition, Subtraction and Multiplication) they wish to interact with.
+- The Division operand will also be added to the Math Game in future updates
 
 ## Future Upcoming Games
 
-In the future, we plan to expand the Brain Teaser Games app by adding more exciting games. Some of the upcoming games include:
+In the near future, the Brain Teaser Games app will be adding more exciting games for users to have a wider range of games to interact with. Some of the upcoming games will/might include:
 
 - Spelling Game: Test your spelling skills by guessing the correct spelling of words.
 - Word Meaning: Guess the meaning of various words and learn new vocabulary.
 - Guess the Brand Name: Identify famous brands based on their logos or descriptions.
 - Fill in the Gap: Complete sentences by filling in the missing words.
 - And lots more..
+
+## Technologies and Languages Used
+
+- [Codeanywhere](app.codeanywhere.com) was used as the IDE in the development of this app
+- [JavaScript Tutor](https://pythontutor.com/javascript.html#mode=edit) was used to test out the codes on each stages during the development of this app.
+- [HTML](https://www.w3schools.com/html/) is the programming language used in writing the structures for several part of the game including the Main homepage, the Flag Game home page, Math Game Home page and the registration page.
+- [CSS](https://www.w3schools.com/css/) is the programming language used in the styling of the game app to make it visually appealing in all areas of the app.
+- [Javascript](https://www.javascript.com/) is the main programming language used to add interactivity and automation the the Flag Game and the Math Game app
+- [Git](https://git-scm.com/) was used to commit and push code during the developement of the App.
+- [GitHub](www.github.com) has been used to store the code, images, and other contents and most importantly has been used to deploy the App to the web
+- [Pexels](www.pexels.com) was used to gather the images used for the flag game.
+
+## Testing and Debugging during development
+
+Throughout the development of this app, different sections of codes were written and tested in a step-by-step manner using `console.log()` statements, and issues such as indent errors, console errors, global variable problems, DOMContentLoaded errors, functionality errors, styling errors, general structure errors, preloading images error, bugs testing and more were addressed along the way. Here's an overview of how the process went:
+
+### Flag Game Testing
+
+### Math Game Testing
 
 ## Usage
 

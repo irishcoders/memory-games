@@ -17,7 +17,7 @@ let quizDatas = [
     { imageSrc: 'assets/images/flags/poland.jpeg', answer: 'poland' },
     { imageSrc: 'assets/images/flags/portugal.jpeg', answer: 'portugal' },
     { imageSrc: 'assets/images/flags/seychelles.jpeg', answer: 'seychelles' },
-    { imageSrc: 'assets/images/flags/south_africa.jpeg', answer: 'south africa' },
+    { imageSrc: 'assets/images/flags/tanzania.jpeg', answer: 'tanzania' },
     { imageSrc: 'assets/images/flags/spain.jpeg', answer: 'spain' },
     { imageSrc: 'assets/images/flags/ukraine.jpeg', answer: 'ukraine' },
     { imageSrc: 'assets/images/flags/zimbabwe.jpeg', answer: 'zimbabwe' },
