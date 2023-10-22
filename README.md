@@ -222,9 +222,12 @@ else if (answer.trim() === "") {
 
 Git was used as the version control software. Commands such as git add ., git status, git commit and git push were used to add, save, stage and push the code to the GitHub repository where the source code is stored.
 
+- Repository link here: [Brain Teaser Games Repository](https://github.com/irishcoders/memory-games.git)
+- Live App here: [Brain Teaser Games Website](https://irishcoders.github.io/memory-games/)
+
 ### Deployment Process
 
-1. Set Up a GitHub Repository using [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template)
+1. Set Up a GitHub Repository
 2. Name your Repository
 3. Copy the Repository link and go to [CodeAnywhere](app.codeanywhere.com)
 4. Create a new Workspace in CodeAnywhere and paste your Repository link to set up your IDE
@@ -233,78 +236,45 @@ Git was used as the version control software. Commands such as git add ., git st
 
 To run the Brain Teaser Games app locally for development and testing purposes, follow these steps:
 
-1. Clone the repository:
+### Clone the repository:
+
+When you create a repository on [GitHub.com], it exists as a remote repository. You can clone the repository to create a local copy on your computer and sync between the two locations.
+
+1. On GitHub.com, navigate to the main page of the repository
+2. Above the list of files, click `<>` Code.
+   - To clone the repository using HTTPS, under "HTTPS", click the "copy" symbol, found beside the repository link
+   - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the "copy" symbol, found beside the repository link
+   - To clone a repository using GitHub CLI, click GitHub CLI, then click the "copy" symbol, found beside the repository link
+3. Open your Terminal
+4. Change the current working directory to the location where you want the cloned directory.
+5. Type `git clone`, and then paste the URL you copied earlier.
 
    ```bash
-    git clone <https://github.com/irishcoders/memory-games.git>
+   git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
    ```
 
-````
+6. Press Enter to create your local clone.
 
-Alternatively, you can download the ZIP file and extract it to your local machine.
-
-2. Navigate to the project directory:
-
-   ```bash
-    cd memory-games
    ```
-## Testing the App
+   > Cloning into `Spoon-Knife`...
+   > remote: Counting objects: 10, done.
+   > remote: Compressing objects: 100% (8/8), done.
+   > remove: Total 10 (delta 1), reused 10 (delta 1)
+   > Unpacking objects: 100% (10/10), done.
 
-This will execute the test suite and provide feedback on the app's functionality.
+   ```
 
-## Troubleshooting
+7. The project will now been cloned on your local machine for use.
 
-### Common Debugging Errors
+### Troubleshooting cloning errors
 
-While running the Brain Teaser Games app, you might encounter some common debugging errors. Below is an example of a potential issue and its solution:
+When cloning a repository it's possible that you might encounter some errors.
 
-- Null Reference Error
+If you're unable to clone a repository, check that:
 
-**Error Description:** This error occurs when the code attempts to access a property or call a method on an object that is null or undefined.
-**Example:**
-
-```javascript
-function updateScore() {
-  // Get the score element from the DOM
-  var scoreElement = document.getElementById("score");
-
-  // Update the score text
-  scoreElement.textContent = score;
-}
-```
-
-**Solution:** To avoid this error, it's essential to check if the element exists before accessing its properties or calling methods on it.
-
-**Updated Code:**
-
-```javascript
-function updateScore() {
-  // Get the score element from the DOM
-  var scoreElement = document.getElementById("score");
-
-  // Check if the element exists before updating the score
-  if (scoreElement) {
-    scoreElement.textContent = score;
-  } else {
-    console.error("Score element not found!");
-  }
-}
-```
-
-By following the above fix, the code will handle the situation where the element with the ID "score" is not found in the HTML document, preventing the Null Reference Error.
-
-### Other Debugging processes
-
-The app `html` and `ccs` code has been tested using The W3C Mark Up Validator (<https://validator.w3.org/nu/#textarea>) and The W3C CSS Validator (<https://jigsaw.w3.org/css-validator/validator>). A LightHouse test has also been carried out during the debugging phase of the app development.
-
-### Unfixed Bugs
-
-- The Math Game media query needs resizing on smaller device. Still in the process of resolving and will be fixed in the next game update.
-- LightHouse reports 68% for Math Game accesibility and this will be fixed in the next game update.
-
-## Future Development
-
-We are excited to expand the app's game collection and enhance the user experience. The upcoming games will offer diverse challenges and learning opportunities. We also plan to create a mobile app version to make Brain Teaser Games easily accessible on smartphones and tablets.
+- You can connect using HTTPS. For more information, see ["Troubleshooting cloning errors."](https://docs.github.com/en/repositories/creating-and-managing-repositories/troubleshooting-cloning-errors)
+- You have permission to access the repository you want to clone.
+- The default branch you want to clone still exists.
 
 ## Credits
 
@@ -329,4 +299,7 @@ However, we appreciate your interest in the project, and if you have any suggest
 ## Licensing
 
 This project is the second project in my Full Stack Web Development program and this app is developed to be submitted as my javascript project at (CodeInstitute.com)
-````
+
+```
+
+```
