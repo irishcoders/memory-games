@@ -1,149 +1,172 @@
-/* Wait for the DOM to finish loading before running the game */
 document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
+    const totalQuestions = 10;
+    let correctAnswers = 0;
+    let initialIncorrectAnswers = 0; // Store the initial incorrect score
+    let incorrectAnswers = initialIncorrectAnswers; // Reset incorrect score
+    let currentQuestion = 0;
+    let isGameInProgress = false; // Boolean to keep track of game status
 
-    for (let button of buttons) {
+    const mathScoreElement = document.getElementById('math-score');
+    const mathIncorrectElement = document.getElementById('math-incorrect');
+    const totalQuestionsElement = document.getElementById('total-questions');
+    const answerBox = document.getElementById('math-answer-box');
+    const messageElement = document.getElementById('message');
+
+    mathScoreElement.innerText = correctAnswers;
+    mathIncorrectElement.innerText = initialIncorrectAnswers; // Resets previous incorrect score
+    totalQuestionsElement.innerText = totalQuestions;
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(function (button) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
-                checkAnswer();
-            } else {
-                runGame();
+                if (isGameInProgress) { // this ensures the game is in progress before checking the answer
+                    checkAnswer();
+                }
             }
         });
-    }
+    });
 
-    document.getElementById("math-answer-box").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
+    answerBox.addEventListener("keydown", function (event) {
+        if (isGameInProgress && event.key === "Enter") { // this checks the answer on Enter key press during the game
             checkAnswer();
         }
     });
 
+    function decrementTotalQuestions() {
+        totalQuestionsElement.innerText = totalQuestions - currentQuestion;
+        currentQuestion++;
+    }
+
+    function generateRandomNumber(max) {
+        return Math.floor(Math.random() * max) + 1;
+    }
+
+    function calculateCorrectAnswer(operand1, operand2, operator) {
+        switch (operator) {
+            case "+":
+                return operand1 + operand2;
+            case "-":
+                return operand1 - operand2;
+            case "*":
+                return operand1 * operand2;
+            default:
+                throw new Error(`Unknown/Unimplemented operator ${operator}`);
+        }
+    }
+
+    function displayMathQuestion(operand1, operand2, operator) {
+        const operand1Element = document.getElementById('operand1');
+        const operand2Element = document.getElementById('operand2');
+        const operatorElement = document.getElementById('operator');
+
+        operand1Element.textContent = operand1;
+        operand2Element.textContent = operand2;
+        operatorElement.textContent = operator;
+    }
+
+    function runGame() {
+        isGameInProgress = true; // Set the game in progress
+
+        if (currentQuestion >= totalQuestions) {
+            showResultAlert(correctAnswers, incorrectAnswers);
+        } else {
+            answerBox.value = "";
+            answerBox.focus();
+
+            const gameTypes = ["addition", "subtract", "multiply"];
+            const randomIndex = Math.floor(Math.random() * gameTypes.length);
+            const gameType = gameTypes[randomIndex];
+
+            const num1 = generateRandomNumber(25);
+            const num2 = generateRandomNumber(25);
+
+            decrementTotalQuestions();
+
+            if (gameType === "addition") {
+                displayMathQuestion(num1, num2, "+");
+            } else if (gameType === "subtract") {
+                const maxNum = Math.max(num1, num2);
+                const minNum = Math.min(num1, num2);
+                displayMathQuestion(maxNum, minNum, "-");
+            } else if (gameType === "multiply") {
+                displayMathQuestion(num1, num2, "*");
+            }
+        }
+    }
+
+    function checkAnswer() {
+        const userAnswer = answerBox.value.trim();
+        messageElement.textContent = "";
+
+        if (userAnswer === "") {
+            messageElement.textContent = "Invalid input. Please enter your answer first.";
+        } else {
+            const parsedAnswer = parseInt(userAnswer);
+            const operand1 = parseInt(document.getElementById("operand1").textContent);
+            const operand2 = parseInt(document.getElementById("operand2").textContent);
+            const operator = document.getElementById("operator").textContent;
+            const correctAnswer = calculateCorrectAnswer(operand1, operand2, operator);
+
+            if (parsedAnswer === correctAnswer) {
+                messageElement.textContent = "Brilliant! You got the correct answer";
+                incrementScore();
+            } else {
+                messageElement.textContent = `Aww.. Sorry your answer was wrong. The correct answer is ${correctAnswer}`;
+                incrementWrongAnswer();
+            }
+
+            // Set a timeout to clear the message and load the next question after a 2 secs delay 
+            setTimeout(function () {
+                messageElement.textContent = "";
+                runGame();
+            }, 2000); // Displays the restart game alert after 2 seconds
+        }
+    }
+
+    function incrementScore() {
+        correctAnswers++;
+        mathScoreElement.innerText = correctAnswers;
+    }
+
+    function incrementWrongAnswer() {
+        incorrectAnswers++;
+        mathIncorrectElement.innerText = incorrectAnswers;
+    }
+
+    function showResultAlert(score, incorrect) {
+        isGameInProgress = false; // Set the game as not in progress
+
+        let resultMessage;
+
+        if (score >= 6) {
+            resultMessage = `Congratulations! you passed. You scored ${score} out of 10`;
+        } else {
+            resultMessage = `Sorry, you failed this time. You scored ${score} out of 10`;
+        }
+
+        messageElement.textContent = resultMessage;
+
+        // Set a timeout to display the restart game alert after 3 seconds.
+        setTimeout(function () {
+            const restart = confirm("Choose 'OK' to Restart or 'Cancel' to Quit Game");
+            messageElement.textContent = ""; // Clear the display message immediately
+
+            if (restart) {
+                currentQuestion = 0;
+                correctAnswers = 0; // Reset the correct score
+                incorrectAnswers = initialIncorrectAnswers; // Reset the incorrect score to the initial value
+                mathScoreElement.innerText = 0;
+                mathIncorrectElement.innerText = initialIncorrectAnswers; // Update the incorrect score display
+                totalQuestionsElement.innerText = totalQuestions;
+                runGame();
+            } else {
+                const quitMessage = "You have chosen to Quit the game. Goodbye!";
+                messageElement.textContent = quitMessage;
+                window.location.href = "index.html#home";
+            }
+        }, 3000); // This displays the restart game alert after 3 seconds
+    }
+
     runGame();
 });
-
-let totalQuestions = 10;
-let correctAnswers = 0;
-let incorrectAnswers = 0;
-
-function decrementTotalQuestions() {
-    totalQuestions--;
-    document.getElementById("total-questions").innerText = totalQuestions;
-}
-
-function runGame() {
-    // Randomly select a game type
-    const gameTypes = ["addition", "subtract", "multiply"];
-    const randomIndex = Math.floor(Math.random() * gameTypes.length);
-    const gameType = gameTypes[randomIndex];
-
-    if (totalQuestions === 0) {
-        showResultAlert();
-    } else {
-        document.getElementById("math-answer-box").value = "";
-        document.getElementById("math-answer-box").focus();
-
-        let num1 = Math.floor(Math.random() * 25) + 1;
-        let num2 = Math.floor(Math.random() * 25) + 1;
-
-        decrementTotalQuestions(); // Decrement total questions when a new question is displayed
-
-        if (gameType === "addition") {
-            displayAdditionQuestion(num1, num2);
-        } else if (gameType === "subtract") {
-            displaySubtractQuestion(num1, num2);
-        } else if (gameType === "multiply") {
-            displayMultiplyQuestion(num1, num2);
-        } else {
-            alert(`Unknown game type: ${gameType}`);
-            throw `Unknown game type: ${gameType}. Aborting!`;
-        }
-    }
-}
-
-function checkAnswer() {
-    let userAnswer = document.getElementById("math-answer-box").value.trim();
-    if (userAnswer === "") {
-        alert("Invalid input. Please enter your answer first.");
-    } else {
-        let parsedAnswer = parseInt(userAnswer);
-        let calculatedAnswer = calculateCorrectAnswer();
-        if (parsedAnswer === calculatedAnswer[0]) {
-            alert("Congrats! You got the correct answer");
-            incrementScore();
-        } else {
-            alert(`Aww.. Your answer was wrong. The correct answer is ${calculatedAnswer[0]}`);
-            incrementWrongAnswer();
-        }
-        runGame();
-    }
-}
-
-function calculateCorrectAnswer() {
-    let operand1 = parseInt(document.getElementById("operand1").innerText);
-    let operand2 = parseInt(document.getElementById("operand2").innerText);
-    let operator = document.getElementById("operator").innerText;
-
-    if (operator === "+") {
-        return [operand1 + operand2, "addition"];
-    } else if (operator === "-") {
-        return [operand1 - operand2, "subtract"];
-    } else if (operator === "*") {
-        return [operand1 * operand2, "multiply"];
-    } else {
-        alert(`Unimplemented operator ${operator}`);
-        throw `Unimplemented operator ${operator}. Aborting!`;
-    }
-}
-
-function incrementScore() {
-    let oldScore = parseInt(document.getElementById('math-score').innerText);
-    document.getElementById('math-score').innerText = ++oldScore;
-    correctAnswers++;
-}
-
-function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById('math-incorrect').innerText);
-    document.getElementById('math-incorrect').innerText = ++oldScore;
-    incorrectAnswers++;
-}
-
-function displayAdditionQuestion(operand1, operand2) {
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
-    document.getElementById('operator').textContent = "+";
-}
-
-function displaySubtractQuestion(operand1, operand2) {
-    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
-    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
-    document.getElementById('operator').textContent = "-";
-}
-
-function displayMultiplyQuestion(operand1, operand2) {
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
-    document.getElementById('operator').textContent = "*";
-}
-
-function showResultAlert() {
-    if (correctAnswers >= 6) {
-        alert(`Congratulations! You passed. You scored ${correctAnswers} out of 10`);
-    } else {
-        alert(`Sorry, you failed. You scored ${correctAnswers} out of 10`);
-    }
-
-    const restart = confirm("Click 'OK' to Restart or 'Cancel' to Quit Game");
-    if (restart) {
-        correctAnswers = 0;
-        incorrectAnswers = 0;
-        totalQuestions = 10; // Reset the total questions count
-        document.getElementById("math-score").innerText = correctAnswers;
-        document.getElementById("math-incorrect").innerText = incorrectAnswers;
-        document.getElementById("total-questions").innerText = totalQuestions; // Update the total questions element
-        runGame();
-    } else {
-        const quitMessage = "You have chosen to quit the game. Goodbye!";
-        alert(quitMessage);
-        window.location.href = "index.html#home";
-    }
-}

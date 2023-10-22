@@ -28,7 +28,7 @@ let quizDatas = [
 ];
 
 // arrage for holding the preloaded images
-const preloadedImages = []; 
+const preloadedImages = [];
 
 // Shuffle the quizDatas array to display questions in random order
 shuffleArray(quizDatas);
@@ -41,12 +41,12 @@ function shuffleArray(array) {
     }
 }
 
-// Function to preload images.
+// Function to preload images in concole.
 function preloadImages() {
     for (let i = 0; i < quizDatas.length; i++) {
         const image = new Image();
         image.src = quizDatas[i].imageSrc;
-        image.onload = function() {
+        image.onload = function () {
             // When an image is loaded, you can display it.
             console.log(`Image preloaded: ${quizDatas[i].imageSrc}`);
             // If you want to start the game when all images are preloaded, add the following line:
@@ -99,7 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function validateAns(answer) {
     let error = document.getElementById("error");
-    if (answer.trim() === "") {
+    if (/[^a-zA-Z]/.test(answer)) {
+        error.innerHTML = "Invalid Input. Please enter a valid alphabetical answer.";
+        return false;
+    } else if (answer.trim() === "") {
         error.innerHTML = "Invalid Input. Please enter an answer.";
         return false;
     } else {

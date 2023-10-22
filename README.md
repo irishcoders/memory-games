@@ -34,13 +34,20 @@ The "Flag Game" is an engaging and educational game designed to challenge your k
 
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
-- On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question. 
-- At the end of the quiz, the user will be scored and the app will provide feedback on user performance     based on how many questions the user got right or wrong.
+- On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question.
+- At the end of the quiz, the user will be scored and the app will provide feedback on user performance based on how many questions the user got right or wrong.
 - If the user scores 20 or more, the game reports a Pass.
 - If user scores below 20, the game reports a Fail.
 - The is a Restart Game option for users to start all over at any point in the game
 - There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
 - At the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like play again.
+
+### Error Handling
+
+- The flag game displays a message that disappears after a 2 second period for each time the user enters an answer
+- The message displays informs the user if their answer was right or wrong
+- If user answer is correct, it says congrats you got the answer
+- If user answer is wrong, it says sorry your answer was wrong, then it displays the correct answer
 
 ## Math Game
 
@@ -52,12 +59,12 @@ The "Math Game" is an exciting and interactive way to sharpen your arithmetic sk
 
 - In this game, you have the freedom to choose the specific math operation you want to play, including addition, subtraction, and multiplication. Challenge yourself with increasingly complex problems as you progress.
 - User objective is to solve the math problems as quickly and accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
-- The Math Game has 3 operand types, namely; Addition, Subtraction and Multiplication. 
-- User has a total of 25 questions for each operand type they choose to play and the game reports the result after each 25 questions. 
+- The Math Game has 3 operand types, namely; Addition, Subtraction and Multiplication.
+- User has a total of 25 questions for each operand type they choose to play and the game reports the result after each 25 questions.
 - If user scores 20 out of 25 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
-- If user scores below 20, the game instructs the user they failed and also ask if they would like to restart the game or quit the game. 
+- If user scores below 20, the game instructs the user they failed and also ask if they would like to restart the game or quit the game.
 - The game is designed to help users improve user's math skills while having fun.
-  
+
 ## Registration
 
 ![BT Register page](assets/images/registerpage.png)
@@ -81,7 +88,7 @@ In the future, we plan to expand the Brain Teaser Games app by adding more excit
 - Guess the Brand Name: Identify famous brands based on their logos or descriptions.
 - Fill in the Gap: Complete sentences by filling in the missing words.
 - And lots more..
-  
+
 ## Usage
 
 ### Running the App Locally
@@ -92,24 +99,24 @@ To run the Brain Teaser Games app locally for development and testing purposes, 
 
    ```bash
     git clone <https://github.com/irishcoders/memory-games.git>
-    ```
+   ```
 
-    Alternatively, you can download the ZIP file and extract it to your local machine.
+   Alternatively, you can download the ZIP file and extract it to your local machine.
 
 2. Navigate to the project directory:
 
    ```bash
     cd memory-games
-    ```
+   ```
 
 3. Install dependencies:
    `npm install`
 
 4. Start the development server:
 
-    ```sql
-    npm start
-    ```
+   ```sql
+   npm start
+   ```
 
 5. Once the server is running, open your web browser, and visit `http://localhost:3000` to access the app.
 
@@ -124,19 +131,18 @@ This will execute the test suite and provide feedback on the app's functionality
 While running the Brain Teaser Games app, you might encounter some common debugging errors. Below is an example of a potential issue and its solution:
 
 - Null Reference Error
-  
+
 **Error Description:** This error occurs when the code attempts to access a property or call a method on an object that is null or undefined.
-    **Example:**
+**Example:**
 
 ```javascript
-    function updateScore() {
+function updateScore() {
+  // Get the score element from the DOM
+  var scoreElement = document.getElementById("score");
 
-        // Get the score element from the DOM
-        var scoreElement = document.getElementById('score');
-
-        // Update the score text
-            scoreElement.textContent = score;
-        }
+  // Update the score text
+  scoreElement.textContent = score;
+}
 ```
 
 **Solution:** To avoid this error, it's essential to check if the element exists before accessing its properties or calling methods on it.
@@ -144,17 +150,17 @@ While running the Brain Teaser Games app, you might encounter some common debugg
 **Updated Code:**
 
 ```javascript
-     function updateScore() {
-            // Get the score element from the DOM
-            var scoreElement = document.getElementById('score');
+function updateScore() {
+  // Get the score element from the DOM
+  var scoreElement = document.getElementById("score");
 
-            // Check if the element exists before updating the score
-            if (scoreElement) {
-                scoreElement.textContent = score;
-            } else {
-                console.error("Score element not found!");
-            }
-        }
+  // Check if the element exists before updating the score
+  if (scoreElement) {
+    scoreElement.textContent = score;
+  } else {
+    console.error("Score element not found!");
+  }
+}
 ```
 
 By following the above fix, the code will handle the situation where the element with the ID "score" is not found in the HTML document, preventing the Null Reference Error.
@@ -185,7 +191,7 @@ We would like to give credit to the following sources:
 - PythonTutor for testing all the code before pasting them in VSCode
 
 - Google searches for learning more about iteration and building complex javascript in the DOM.
-  
+
 ## Contributing
 
 At the moment, this project is the second assignment project for me, Oluwaseyi Babalola under the full stack web development program at Code Institute. As such, we are not accepting external contributions at this time.

@@ -304,7 +304,6 @@ a:hover {
 .math-score-area {
     margin: 5px auto;
     width: 60%;
-    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -320,6 +319,11 @@ a:hover {
 
 #math-incorrect {
     color: red;
+    font-weight: bold;
+}
+
+#total-questions {
+    color: blue;
     font-weight: bold;
 }
 
@@ -340,10 +344,7 @@ a:hover {
 .math-scores {
     display: inline-block;
     padding: 25px;
-}
-
-.total-math-questions {
-    text-align: center;
+    min-width: 70px;
 }
 
 /* ----Mathgame Buttons--- */
@@ -608,18 +609,8 @@ input[type="submit"]:hover {
         justify-content: space-between;
         align-items: center;
         font-size: 1rem;
-        margin-top: 5px;
-    }
-
-    /*
-    .math-scores span {
-        display: inline-block;
-        padding: 3px;
-    }
-    */
-
-    .total-math-questions {
         text-align: center;
+        min-width: 80px;
     }
 
     /* Forms and registration */
