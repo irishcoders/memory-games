@@ -35,19 +35,25 @@ The "Flag Game" is an engaging and educational game designed to challenge your k
 - The Flag Quiz game challenges users to identify the country associated with a displayed flag.
 - The game consists of 25 questions, testing the player's knowledge of flags from around the world.
 - On every incorrect answer provided, the game automatically informs the user of their input and the correct answer to the particular question.
-- At the end of the quiz, the user will be scored and the app will provide feedback on user performance based on how many questions the user got right or wrong.
+  ![]()
+- At the end of the quiz, the user will be scored and the app will provide feedback on user performance based on how many questions the user answered right or wrong.
 - If the user scores 20 or more, the game reports a Pass.
+  ![]()
 - If user scores below 20, the game reports a Fail.
-- The is a Restart Game option for users to start all over at any point in the game
+  ![]()
+- There is a Restart Game option for users to start all over at any point in the game
 - There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
 - At the end of the quiz, A **Click OK to Restart Game** message is displayed on the screen to ask users if they would like play again.
+  ![]()
 
-### Error Handling
+### Flag Game Error Handling
 
 - The flag game displays a message that disappears after a 2 second period for each time the user enters an answer
-- The message displays informs the user if their answer was right or wrong
-- If user answer is correct, it says congrats you got the answer
+- The message displayed informs the user if their answer was right or wrong
+- If user answer is correct, it says **"congrats you got the answer"**
 - If user answer is wrong, it says sorry your answer was wrong, then it displays the correct answer
+- If user enters an integer or any other character type rather than an alphabetical answer, the game informs the user to enter an alphabetical answer
+- If user enters a space bar or no answer at all, the game informs the user to enter a valid answer
 
 ## Math Game
 
@@ -57,13 +63,30 @@ The "Math Game" is an exciting and interactive way to sharpen your arithmetic sk
 
 ### How it works
 
-- In this game, you have the freedom to choose the specific math operation you want to play, including addition, subtraction, and multiplication. Challenge yourself with increasingly complex problems as you progress.
-- User objective is to solve the math problems as quickly and accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
-- The Math Game has 3 operand types, namely; Addition, Subtraction and Multiplication.
-- User has a total of 25 questions for each operand type they choose to play and the game reports the result after each 25 questions.
-- If user scores 20 out of 25 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
-- If user scores below 20, the game instructs the user they failed and also ask if they would like to restart the game or quit the game.
+- This game offers 10 questions on each round and shuffles questions between different math operators namely Addition, Subtraction and Multiplication. Challenge yourself with increasingly complex problems as you progress.
+- User objective is to solve the math problems as accurately as possible, accumulating points with each correct answer. It's a fantastic way to not only enhance your math skills but also compete with yourself to achieve higher scores.
+- The game provides feedback on every question answered. If user answers a question correctly, the game informs the user the correct answer has been supplied and if the user gets a question wrong, the game provides feedback with the correct answer.
+  ![]()
+
+- If user scores 6 out of 10 questions, the game informs the user they passed and ask if they would like to restart the game or quit the game
+  ![]()
+- If user scores below 6, the game instructs the user they failed and also ask if they would like to restart the game or quit the game.
+  ![]()
+- There is a Restart Game option for users to start all over at any point in the game
+- There is also a Quit Game option for users to quit and return to the Games Homepage at any point in the game
+- At the end of the Math Game, A **Choose OK to Restart Game or Cancel to Quit** message is displayed on the screen to ask users if they would like play again.
+  ![]()
 - The game is designed to help users improve user's math skills while having fun.
+
+### Math Game Error Handling
+
+- The Math game displays a message that disappears after a 2 second period for each time the user enters an answer
+- The message displayed informs the user if their answer was right or wrong
+- If user answer is correct, it says **"Brilliant! you got the answer"**
+- If user answer is wrong, it says **"Aww..sorry your answer was wrong"**, then it displays the correct answer
+- If user enters a space bar, an invalid character that is not an integer like "-" or "." or no answer at all, the game informs the user to enter a valid input.
+- The game however allows a user to enter a minus or a dot with an integer e.g -10 or .10 and then provides feedback if the user answer is correct or incorrect.
+- The game prevents the user from manually selecting an operand type and all questions are automatically randomly generated with random operand types.
 
 ## Registration
 
