@@ -2,20 +2,6 @@
 
 ![BT logo](assets/images/btlogo.png)
 
-**Table of Contents**
-
-- [Introduction](introduction)
-- [Features](#features)
-- [Game Updates](#game-updates)
-- [Future Games](#future-games)
-- [Usage](#usage)
-- [Testing the App](#testing-the-app)
-- [Troubleshooting](#troubleshooting)
-- [Future Development](#future-development)
-- [Credits](#credits)
-- [Contributing](#contributing)
-- [Licensing](#licensing)
-
 # Introduction
 
 Brain Teaser Games is a web-based application designed for users of all ages to test their knowledge of country flags and basic math calculations. The app currently offers two exciting games: "Flag Quiz" and "Love Math." It aims to provide an enjoyable and educational experience to players. The app was built using `html`, `css`, and `javascript`. The app also features a registration page aimed at getting user's feedback and also to enable seamless notifications of game updates to registered users. This app has gone through testing and debugging stages and it is connstantly being tested to ensure smooth user experience.
@@ -110,6 +96,8 @@ The app registration page includes the features below;
 ### Registration Error Handling
 
 The game has been tested so that users cannot leave a required field blank and users will not be able to proceed with registration unless all required fields have been supplied with the expected details.
+
+# App Updates
 
 ## Upcoming Update for Flag Game
 
@@ -229,12 +217,51 @@ Git was used as the version control software. Commands such as git add ., git st
 
 1. Set Up a GitHub Repository
 2. Name your Repository
-3. Copy the Repository link and go to [CodeAnywhere](app.codeanywhere.com)
-4. Create a new Workspace in CodeAnywhere and paste your Repository link to set up your IDE
+3. Initialize Git in your Local Project:
 
-### Running the App Locally
+   - In your local development environment, navigate to the root folder of your project.
+   - Open a terminal or command prompt.
+   - Run the following command to initialize a local Git repository:
 
-To run the Brain Teaser Games app locally for development and testing purposes, follow these steps:
+   ```csharp
+   git init
+   ```
+
+4. Add and Commit Your Code:
+
+   - Add your project files to the Git staging area using the following command:
+
+   ```csharp
+   git add .
+   ```
+
+   - Commit your changes with a descriptive message:
+
+   ```csharp
+   git commit -m"Initial commit"
+   ```
+
+5. Link Your Local Repository to GitHub:
+
+   - On your GitHub repository's main page, you'll find the repository's URL.
+   - Run the following command, replacing `<repository_url>` with your repository's URL, to connect your local repository to the remote one on GitHub:
+
+   ```csharp
+   git remote add origin <repository_url>
+   ```
+
+6. Push Your Code to GitHub:
+
+   - Push your committed code to the GitHub repository:
+
+   ```perl
+   git push -u origin master
+   ```
+
+   - You may need to enter your GitHub username and password to complete this step.
+
+7. Access Your Deployed App:
+   - Once GitHub Pages is enabled and your code is pushed to the 'master' branch, your app will be available at the provided GitHub Pages URL. For example: `<https://<username>.github.io/<repository_name>>`.
 
 ### Clone the repository:
 
@@ -276,30 +303,29 @@ If you're unable to clone a repository, check that:
 - You have permission to access the repository you want to clone.
 - The default branch you want to clone still exists.
 
-## Credits
+## Credits and Acknowledgements
 
-We would like to give credit to the following sources:
+I would like to extend gratitude and give credit to the following resources that have contributed immensely to the development of the Brain Teaser Games app:
 
-- Unsplash (<https://www.unsplash.com>) and Pexels (<https://pexels.com>) for providing the images used in the project.
+1. **Daisy McGirr**, my mentor for providing guidance and suggesting use of concepts in working through some critical parts of the app and media query.
 
-- Code Institute's Love Math project, which served as the inspiration for the math game in our app.
+2. [Code Institute's](www.codeinstitute.com) Love Math project, which served as the inspiration for the math game in this app.
+3. [Pexels](https://pexels.com) for providing the images used in the project.
 
-- Adam Khoury Javascript Youtube tutorial (<https://youtu.be/tLxBwSL3lPQ>) for teaching us how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
+4. [Adam Khoury Javascript Youtube tutorial](https://youtu.be/tLxBwSL3lPQ) for explaining how to use the Fisher-Yates algorithm to shuffle an array, which was helpful in building certain game components.
 
-- PythonTutor for testing all the code before pasting them in VSCode
+5. [Net Ninja Youtube Tutorial](https://www.youtube.com/watch?v=G5Or47gPH-4&pp=ygUeZG9tY29udGVudGxvYWRlZCBpbiBqYXZhc2NyaXB0) for clarity on DOMCOntentLoaded and Event listeners
 
-- Google searches for learning more about iteration and building complex javascript in the DOM.
+6. [Web Dev Simplified Youtube Tutorial](https://www.youtube.com/watch?v=FOD408a0EzU&pp=ygUXZnVuY3Rpb25zIGluIGphdmFzY3JpcHQ%3D) for clarity on writing functions which was a core part of this app development
+
+7. [PythonTutor](www.pythontutor.com) for testing all functions step by step
+
+8. [Google](www.google.com) for learning more about iteration and building complex javascript in the DOM.
+
+9. [Mark Down](https://www.markdownguide.org/cheat-sheet/) for guidance in writing certain Readme structures
+
+10. [Techsini](https://techsini.com/multi-mockup/index.php) for MockUp images
 
 ## Contributing
 
-At the moment, this project is the second assignment project for me, Oluwaseyi Babalola under the full stack web development program at Code Institute. As such, we are not accepting external contributions at this time.
-
-However, we appreciate your interest in the project, and if you have any suggestions or feedback, feel free to reach out to us
-
-## Licensing
-
-This project is the second project in my Full Stack Web Development program and this app is developed to be submitted as my javascript project at (CodeInstitute.com)
-
-```
-
-```
+Contributions to the Brain Teaser Games App project are welcomed. If you have ideas for new features, improvements, or bug fixes, please don't hesitate to open an issue or submit a pull request. I strongly believe that collaboration is key to creating a better user experience, and appreciate your efforts to make this app even more amazing. Thank you for even considering contributing!
